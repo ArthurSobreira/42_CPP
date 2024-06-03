@@ -15,8 +15,8 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I.
 RM		=	rm -rf
 
 NAME	=	megaphone
-SRCS	=	src/megaphone.cpp
 BUILD	=	./build
+SRCS	=	src/megaphone.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard *.hpp)
 
