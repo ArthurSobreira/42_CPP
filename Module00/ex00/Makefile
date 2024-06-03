@@ -15,15 +15,14 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I.
 RM		=	rm -rf
 
 NAME	=	megaphone
-SRCS	=	megaphone.cpp
+SRCS	=	src/megaphone.cpp
 BUILD	=	./build
-OBJS	=	$(addprefix $(BUILD)/, $(SRCS:.cpp=.o))
+OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard *.hpp)
 
 GREEN	=	"\033[32;1m"
 RED		=	"\033[31;1m"
 CYAN	=	"\033[36;1;3m"
-WHITE	=	"\033[37;1m"
 WHITE_U	=	"\033[37;1;4m"
 LIMITER =	"\033[0m"
 
@@ -37,7 +36,7 @@ $(NAME): $(OBJS)
 	@echo $(CYAN)[$(NAME) executable created successfully...]$(LIMITER)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
 
-$(BUILD)/%.o: %.cpp $(INC)
+$(BUILD)/%.o: src/%.cpp $(INC)
 	@echo $(GREEN)[Compiling]$(LIMITER) $(WHITE_U)$(notdir $(<))...$(LIMITER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
