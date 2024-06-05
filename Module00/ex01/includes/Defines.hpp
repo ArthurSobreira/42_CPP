@@ -37,15 +37,21 @@
 # define UNDER_CYAN "\033[4;36m"
 # define UNDER_WHITE "\033[4;37m"
 
-/* Utils */
+/* Utils Defines */
 # define MAX_CONTACTS 8
-# define HEADER_SIZE 43
+# define HEADER_SIZE 45
+
+/* Messages Defines */
 # define WELCOME_MESSAGE BOLD_GREEN \
-"  Welcome to the PhoneBook! (type 'help')" RESET
+"   Welcome to the PhoneBook! (type 'help')" RESET
 # define HELP_MESSAGE BOLD_WHITE \
 "[ADD]    -  Add a new contact\n\
 [SEARCH] -  Search for a contact\n\
 [EXIT]   -  Exit the PhoneBook" RESET
+# define ERROR_MESSAGE RED \
+"Invalid command. Type 'help' for a list of commands." RESET
 # define INPUT_MESSAGE BOLD_GRAY "PhoneBook> " RESET
+# define EXIT_MESSAGE BOLD_CYAN \
+"\n ~ Goodbye! Have a nice day! ~ " RESET
 
 #endif
