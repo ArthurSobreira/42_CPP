@@ -60,5 +60,6 @@ int	main(void) {
 
 	Utils::clearCin();
 	std::cout << EXIT_MESSAGE << std::endl;
+
 	return (0);
 }
