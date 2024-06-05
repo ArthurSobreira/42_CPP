@@ -6,7 +6,7 @@
 class PhoneBook {
 	private:
 		Contact	_contacts[8];
-		static int	_contactIndex;
+		static short	_contactNumber;
 
 	public:
 		/* Constructor Method */
@@ -15,7 +15,10 @@ class PhoneBook {
 		/* Destructor Method */
 		~PhoneBook();
 
-		
+		/* Public Methods */
+		Contact	createContact(void);
+		void	addContact(Contact contact);
+		void	searchContact(void);
 };
 
 #endif
