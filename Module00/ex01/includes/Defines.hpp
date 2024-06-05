@@ -59,10 +59,14 @@
 RED << std::string(nameType) << " cannot be empty." << RESET
 # define ERROR_INVALID_NAME(nameType) \
 RED << std::string(nameType) << " can only contain alphabets." << RESET
+# define ERROR_INVALID_NUMBER(numberType) \
+RED << std::string(numberType) << " can only contain digits." << RESET
 # define ERROR_NUMBER_LENGTH \
 RED "Phone Number must be between 10 and 15 digits" RESET
-# define ERROR_INVALID_NUMBER \
-RED "Phone Number can only contain digits." RESET
+# define ERROR_INVALID_INDEX \
+RED "Invalid index." RESET
+# define ERROR_PHONEBOOK_EMPTY \
+RED << "PhoneBook is empty." << RESET
 
 /* Input Defines */
 # define INPUT_FIRST_NAME \
@@ -75,5 +79,19 @@ UNDER_WHITE "Nickname:" RESET " "
 UNDER_WHITE "Phone Number:" RESET " "
 # define INPUT_DARKEST_SECRET \
 UNDER_WHITE "Darkest Secret:" RESET " "
+# define INPUT_SEARCH \
+UNDER_WHITE "Enter the index of the contact:" RESET " "
+
+/* Print Defines */
+# define PRINT_FIRST_NAME \
+YELLOW << "First Name        " << RESET
+# define PRINT_LAST_NAME \
+YELLOW << "Last Name         " << RESET
+# define PRINT_NICKNAME \
+YELLOW << "Nickname          " << RESET
+# define PRINT_PHONE_NUMBER \
+YELLOW << "Phone Number      " << RESET
+# define PRINT_DARKEST_SECRET \
+YELLOW << "Darkest Secret    " << RESET
 
 #endif
