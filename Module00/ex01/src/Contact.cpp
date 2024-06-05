@@ -1,6 +1,6 @@
 #include "Contact.hpp"
 
-Contact::Contact() {
+Contact::Contact(void) {
 	this->_firstName = "";
 	this->_lastName = "";
 	this->_nickname = "";
@@ -8,7 +8,7 @@ Contact::Contact() {
 	this->_darkestSecret = "";
 };
 
-Contact::~Contact() {};
+Contact::~Contact(void) {};
 
 /* Getter and Setter _firstName */
 std::string	Contact::getFirstName(void) const {
