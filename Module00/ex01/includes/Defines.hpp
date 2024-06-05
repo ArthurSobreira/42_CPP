@@ -54,4 +54,26 @@
 # define EXIT_MESSAGE BOLD_CYAN \
 "\n ~ Goodbye! Have a nice day! ~ " RESET
 
+/* Error defines */
+# define ERROR_EMPTY_FIELD(nameType) \
+RED << std::string(nameType) << " cannot be empty." << RESET
+# define ERROR_INVALID_NAME(nameType) \
+RED << std::string(nameType) << " can only contain alphabets." << RESET
+# define ERROR_NUMBER_LENGTH \
+RED "Phone Number must be between 10 and 15 digits" RESET
+# define ERROR_INVALID_NUMBER \
+RED "Phone Number can only contain digits." RESET
+
+/* Input Defines */
+# define INPUT_FIRST_NAME \
+UNDER_WHITE "First Name:" RESET " "
+# define INPUT_LAST_NAME \
+UNDER_WHITE "Last Name:" RESET " "
+# define INPUT_NICKNAME \
+UNDER_WHITE "Nickname:" RESET " "
+# define INPUT_PHONE_NUMBER \
+UNDER_WHITE "Phone Number:" RESET " "
+# define INPUT_DARKEST_SECRET \
+UNDER_WHITE "Darkest Secret:" RESET " "
+
 #endif
