@@ -84,14 +84,14 @@ UNDER_WHITE "Enter the index of the contact:" RESET " "
 
 /* Print Defines */
 # define PRINT_FIRST_NAME \
-YELLOW << "First Name        " << RESET
+YELLOW << "First Name        :" << RESET
 # define PRINT_LAST_NAME \
-YELLOW << "Last Name         " << RESET
+YELLOW << "Last Name         :" << RESET
 # define PRINT_NICKNAME \
-YELLOW << "Nickname          " << RESET
+YELLOW << "Nickname          :" << RESET
 # define PRINT_PHONE_NUMBER \
-YELLOW << "Phone Number      " << RESET
+YELLOW << "Phone Number      :" << RESET
 # define PRINT_DARKEST_SECRET \
-YELLOW << "Darkest Secret    " << RESET
+YELLOW << "Darkest Secret    :" << RESET
 
 #endif
