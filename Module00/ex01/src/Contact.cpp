@@ -19,6 +19,7 @@ void Contact::setFirstName(std::string firstName) {
 	this->_firstName = firstName;
 }
 
+
 /* Getter and Setter _lastName */
 std::string Contact::getLastName(void) const {
 	return (this->_lastName);
@@ -27,6 +28,7 @@ std::string Contact::getLastName(void) const {
 void Contact::setLastName(std::string lastName) {
 	this->_lastName = lastName;
 }
+
 
 /* Getter and Setter _nickname */
 std::string Contact::getNickname(void) const {
@@ -37,6 +39,7 @@ void Contact::setNickname(std::string nickname) {
 	this->_nickname = nickname;
 }
 
+
 /* Getter and Setter _phoneNumber */
 std::string Contact::getPhoneNumber(void) const {
 	return (this->_phoneNumber);
@@ -45,6 +48,7 @@ std::string Contact::getPhoneNumber(void) const {
 void Contact::setPhoneNumber(std::string phoneNumber) {
 	this->_phoneNumber = phoneNumber;
 }
+
 
 /* Getter and Setter _darkestSecret */
 std::string Contact::getDarkestSecret(void) const {
