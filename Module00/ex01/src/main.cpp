@@ -22,7 +22,7 @@ namespace Utils {
 	}
 
 	void	repeatChar(char c, int n, std::string color) {
-		for (size_t i = 0; i < n; i++) {
+		for (size_t i = 0; i < (size_t)n; i++) {
 			std::cout << color << c;
 		}
 		std::cout << RESET << std::endl;
@@ -36,7 +36,7 @@ namespace Utils {
 }
 
 int	main(void) {
-	Contact	contact;
+	PhoneBook	phonebook;
 	std::string	command;
 
 	Utils::repeatChar('=', HEADER_SIZE, BOLD_GREEN);
@@ -50,6 +50,15 @@ int	main(void) {
 		command = Utils::stringStrip(command);
 		if (command == "HELP")
 			std::cout << HELP_MESSAGE << std::endl;
+		else if (command == "ADD")
+			phonebook.addContact(phonebook.createContact());
+		else if (command == "SEARCH")
+			phonebook.searchContact();
+		else if (command != "EXIT")
+			std::cout << ERROR_MESSAGE << std::endl;
 	} while (command != "EXIT");
+
+	Utils::clearCin();
+	std::cout << EXIT_MESSAGE << std::endl;
 	return (0);
 }
