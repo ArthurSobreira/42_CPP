@@ -11,14 +11,14 @@ DEFAULT_GOAL: all
 #------------------------------------------------------------------------------#
 
 CC		=	c++
-CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I.
+CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I includes/
 RM		=	rm -rf
 
 NAME	=	phonebook
 BUILD	=	./build
-SRCS	=	src/Contact.cpp src/Phonebook.cpp src/main.cpp
+SRCS	=	src/Contact.cpp src/PhoneBook.cpp src/main.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
-INC		=	$(wildcard *.hpp)
+INC		=	$(wildcard includes/*.hpp)
 
 GREEN	=	"\033[32;1m"
 RED		=	"\033[31;1m"
