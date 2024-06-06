@@ -64,7 +64,7 @@ namespace PBUtils
 		return (str);
 	}
 
-	void	clearCin(void) {
+	void	clearCin( void ) {
 		std::cin.eof();
 		fflush(stdin);
 		std::clearerr(stdin);
@@ -74,11 +74,11 @@ namespace PBUtils
 
 short	PhoneBook::_contactNumber = 0;
 
-PhoneBook::PhoneBook() {};
+PhoneBook::PhoneBook( void ) {};
 
-PhoneBook::~PhoneBook() {};
+PhoneBook::~PhoneBook( void ) {};
 
-Contact PhoneBook::createContact(void) {
+Contact PhoneBook::createContact( void ) {
 	Contact		contact;
 	std::string	input;
 
@@ -150,7 +150,7 @@ void PhoneBook::addContact(Contact contact) {
 	this->_contactNumber++;
 }
 
-void PhoneBook::searchContact(void) {
+void PhoneBook::searchContact( void ) {
 	std::string	input;
 	int			index;
 
