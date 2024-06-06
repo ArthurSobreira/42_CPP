@@ -20,6 +20,7 @@ void Zombie::setName( std::string name ) {
 	this->_name = name;
 }
 
+
 void Zombie::announce( void ) {
 	std::cout << GREEN << this->getName() << ": BraiiiiiiinnnzzzZ..." \
 		<< RESET << std::endl;
