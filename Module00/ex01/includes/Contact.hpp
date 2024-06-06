@@ -19,23 +19,23 @@ class Contact {
 		~Contact();
 
 		/* Getter and Setter _firstName */
-		std::string	getFirstName(void) const;
+		std::string	getFirstName( void ) const;
 		void		setFirstName(std::string firstName);
 
 		/* Getter and Setter _lastName */
-		std::string	getLastName(void) const;
+		std::string	getLastName( void ) const;
 		void		setLastName(std::string lastName);
 
 		/* Getter and Setter _nickname */
-		std::string	getNickname(void) const;
+		std::string	getNickname( void ) const;
 		void		setNickname(std::string nickname);
 
 		/* Getter and Setter _phoneNumber */
-		std::string	getPhoneNumber(void) const;
+		std::string	getPhoneNumber( void ) const;
 		void		setPhoneNumber(std::string phoneNumber);
 
 		/* Getter and Setter _darkestSecret */
-		std::string	getDarkestSecret(void) const;
+		std::string	getDarkestSecret( void ) const;
 		void		setDarkestSecret(std::string darkestSecret);
 };
 
