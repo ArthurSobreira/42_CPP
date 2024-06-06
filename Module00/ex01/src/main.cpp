@@ -28,14 +28,14 @@ namespace Utils {
 		std::cout << RESET << std::endl;
 	}
 
-	void	clearCin(void) {
+	void	clearCin( void ) {
 		fflush(NULL);
 		std::clearerr(stdin);
 		std::cin.clear();
 	}
 }
 
-int	main(void) {
+int	main( void ) {
 	PhoneBook	phonebook;
 	std::string	command;
 
