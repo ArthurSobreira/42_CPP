@@ -10,15 +10,15 @@ class PhoneBook {
 
 	public:
 		/* Constructor Method */
-		PhoneBook();
+		PhoneBook( void );
 
 		/* Destructor Method */
-		~PhoneBook();
+		~PhoneBook( void );
 
 		/* Public Methods */
-		Contact	createContact(void);
+		Contact	createContact( void );
 		void	addContact(Contact contact);
-		void	searchContact(void);
+		void	searchContact( void );
 };
 
 #endif
