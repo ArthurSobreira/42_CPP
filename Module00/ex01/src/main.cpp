@@ -6,7 +6,7 @@
 #include <cstdio>
 
 namespace Utils {
-	std::string	stringStrip(std::string str) {
+	std::string	stringStrip( std::string str ) {
 		size_t	start = str.find_first_not_of(" \t");
 		size_t	end = str.find_last_not_of(" \t");
 
@@ -15,13 +15,13 @@ namespace Utils {
 		return (str.substr(start, end - start + 1));
 	}
 
-	void	stringToUpper(std::string &str) {
+	void	stringToUpper( std::string &str ) {
 		for (size_t i = 0; i < str.length(); i++) {
 			str[i] = toupper(str[i]);
 		}
 	}
 
-	void	repeatChar(char c, int n, std::string color) {
+	void	repeatChar( char c, int n, std::string color ) {
 		for (size_t i = 0; i < (size_t)n; i++) {
 			std::cout << color << c;
 		}
