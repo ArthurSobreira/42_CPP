@@ -17,7 +17,7 @@ class PhoneBook {
 
 		/* Public Methods */
 		Contact	createContact( void );
-		void	addContact(Contact contact);
+		void	addContact( Contact contact );
 		void	searchContact( void );
 };
 
