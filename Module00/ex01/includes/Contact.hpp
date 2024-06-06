@@ -13,10 +13,10 @@ class Contact {
 
 	public:
 		/* Constructor Method */
-		Contact();
+		Contact( void );
 
 		/* Destructor Method */
-		~Contact();
+		~Contact( void );
 
 		/* Getter and Setter _firstName */
 		std::string	getFirstName( void ) const;
