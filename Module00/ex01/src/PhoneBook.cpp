@@ -58,6 +58,12 @@ namespace PBUtils
 		return (true);
 	}
 
+	std::string truncateString(std::string str) {
+		if (str.length() > 10)
+			return (str.substr(0, 9) + ".");
+		return (str);
+	}
+
 	void	clearCin(void) {
 		std::cin.eof();
 		fflush(stdin);
@@ -154,18 +160,22 @@ void PhoneBook::searchContact(void) {
 	}
 
 	std::cout << "     Index|First Name| Last Name|  Nickname" << std::endl;
-	for (int i = 0; i < this->_contactNumber; i++) {
+	for (int i = 0; i < std::min(this->_contactNumber, static_cast<short>(8)); i++) {
 		std::cout << std::setw(10) << i + 1 << "|";
-		std::cout << std::setw(10) << this->_contacts[i].getFirstName().substr(0, 10) << "|";
-		std::cout << std::setw(10) << this->_contacts[i].getLastName().substr(0, 10) << "|";
-		std::cout << std::setw(10) << this->_contacts[i].getNickname().substr(0, 10) << std::endl;
+		std::cout << std::setw(10) << \
+		PBUtils::truncateString(this->_contacts[i].getFirstName())<< "|";
+		std::cout << std::setw(10) << \
+		PBUtils::truncateString(this->_contacts[i].getLastName()) << "|";
+		std::cout << std::setw(10) << \
+		PBUtils::truncateString(this->_contacts[i].getNickname()) << std::endl;
 	}
 
 	do {
 		std::cout << INPUT_SEARCH;
 		std::getline(std::cin, input);
-	} while (!PBUtils::parseIndex(input, this->_contactNumber, "Index"));
-	
+	} while (!PBUtils::parseIndex(input, \
+		std::min(this->_contactNumber, static_cast<short>(8)), "Index"));
+
 	index = std::atoi(input.c_str());
 	std::cout << PRINT_FIRST_NAME << this->_contacts[index - 1].getFirstName() << std::endl;
 	std::cout << PRINT_LAST_NAME << this->_contacts[index - 1].getLastName() << std::endl;
