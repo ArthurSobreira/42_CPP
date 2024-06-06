@@ -1,6 +1,6 @@
 #include "Contact.hpp"
 
-Contact::Contact(void) {
+Contact::Contact( void ) {
 	this->_firstName = "";
 	this->_lastName = "";
 	this->_nickname = "";
@@ -8,10 +8,10 @@ Contact::Contact(void) {
 	this->_darkestSecret = "";
 };
 
-Contact::~Contact(void) {};
+Contact::~Contact( void ) {};
 
 /* Getter and Setter _firstName */
-std::string	Contact::getFirstName(void) const {
+std::string	Contact::getFirstName( void ) const {
 	return (this->_firstName);
 }
 
@@ -21,7 +21,7 @@ void Contact::setFirstName(std::string firstName) {
 
 
 /* Getter and Setter _lastName */
-std::string Contact::getLastName(void) const {
+std::string Contact::getLastName( void ) const {
 	return (this->_lastName);
 }
 
@@ -31,7 +31,7 @@ void Contact::setLastName(std::string lastName) {
 
 
 /* Getter and Setter _nickname */
-std::string Contact::getNickname(void) const {
+std::string Contact::getNickname( void ) const {
 	return (this->_nickname);
 }
 
@@ -41,7 +41,7 @@ void Contact::setNickname(std::string nickname) {
 
 
 /* Getter and Setter _phoneNumber */
-std::string Contact::getPhoneNumber(void) const {
+std::string Contact::getPhoneNumber( void ) const {
 	return (this->_phoneNumber);
 }
 
@@ -51,7 +51,7 @@ void Contact::setPhoneNumber(std::string phoneNumber) {
 
 
 /* Getter and Setter _darkestSecret */
-std::string Contact::getDarkestSecret(void) const {
+std::string Contact::getDarkestSecret( void ) const {
 	return (this->_darkestSecret);
 }
 
