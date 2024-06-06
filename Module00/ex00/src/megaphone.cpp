@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-int	main(int argC, char *argV[]) {
+int	main( int argC, char *argV[] ) {
 	if (argC == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
