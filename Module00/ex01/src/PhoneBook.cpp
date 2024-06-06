@@ -8,7 +8,7 @@
 
 namespace PBUtils
 {
-	bool	parseName(std::string name, std::string nameType) {
+	bool	parseName( std::string name, std::string nameType ) {
 		if (name.empty()) {
 			std::cout << ERROR_EMPTY_FIELD(nameType) << std::endl;
 			return (false);
@@ -22,7 +22,7 @@ namespace PBUtils
 		return (true);
 	}
 
-	bool	parsePhoneNumber(std::string phoneNumber, std::string numberType) {
+	bool	parsePhoneNumber( std::string phoneNumber, std::string numberType ) {
 		if (phoneNumber.empty()) {
 			std::cout << ERROR_EMPTY_FIELD("Phone Number") << std::endl;
 			return (false);
@@ -40,7 +40,7 @@ namespace PBUtils
 		return (true);
 	}
 
-	bool parseIndex(std::string index, short contactNumber, std::string numberType) {
+	bool parseIndex( std::string index, short contactNumber, std::string numberType ) {
 		if (index.empty()) {
 			std::cout << ERROR_EMPTY_FIELD("Index") << std::endl;
 			return (false);
@@ -58,7 +58,7 @@ namespace PBUtils
 		return (true);
 	}
 
-	std::string truncateString(std::string str) {
+	std::string truncateString( std::string str ) {
 		if (str.length() > 10)
 			return (str.substr(0, 9) + ".");
 		return (str);
@@ -134,7 +134,7 @@ Contact PhoneBook::createContact( void ) {
 	return (contact);
 }
 
-void PhoneBook::addContact(Contact contact) {
+void PhoneBook::addContact( Contact contact ) {
 	std::string	firstName = contact.getFirstName();
 	std::string	lastName = contact.getLastName();
 	std::string	nickname = contact.getNickname();
