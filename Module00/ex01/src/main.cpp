@@ -1,9 +1,9 @@
-#include <iostream>
-#include <string>
-#include <cstdio>
 #include "PhoneBook.hpp"
 #include "Defines.hpp"
 #include "Contact.hpp"
+#include <iostream>
+#include <string>
+#include <cstdio>
 
 namespace Utils {
 	std::string	stringStrip(std::string str) {
