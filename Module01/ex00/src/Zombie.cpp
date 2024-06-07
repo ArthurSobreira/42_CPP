@@ -7,8 +7,8 @@ Zombie::Zombie( void ) {
 }
 
 Zombie::~Zombie( void ) {
-	std::cout << RED << "Zombie" << this->getName() << " destroyed" \
-		<< RESET << std::endl;
+	std::cout << RED << "Zombie " << this->getName() << " destroyed" \
+		<< RESET << std::endl << std::endl;
 }
 
 /* Getter and Setter _name */
