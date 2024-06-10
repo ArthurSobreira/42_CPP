@@ -36,24 +36,24 @@ namespace Tests {
 }
 
 int	main ( void ) {
-	Tests::repeatChar('=', 24, WHITE);
-	std::cout << "  Testing Local Zombie" << std::endl;
-	Tests::repeatChar('=', 24, WHITE);
+	Tests::repeatChar('=', 30, WHITE);
+	std::cout << "     Testing Local Zombie" << std::endl;
+	Tests::repeatChar('=', 30, WHITE);
 	Tests::testLocalZombie();
 
-	Tests::repeatChar('=', 24, WHITE);
-	std::cout << "  Testing Random Chump" << std::endl;
-	Tests::repeatChar('=', 24, WHITE);
+	Tests::repeatChar('=', 30, WHITE);
+	std::cout << "     Testing Random Chump" << std::endl;
+	Tests::repeatChar('=', 30, WHITE);
 	Tests::testRandomChump();
 
-	Tests::repeatChar('=', 22, WHITE);
-	std::cout << "  Testing New Zombie" << std::endl;
-	Tests::repeatChar('=', 22, WHITE);
+	Tests::repeatChar('=', 28, WHITE);
+	std::cout << "     Testing New Zombie" << std::endl;
+	Tests::repeatChar('=', 28, WHITE);
 	Tests::testNewZombie();
 
-	Tests::repeatChar('=', 27, WHITE);
-	std::cout << "  Testing New Zombie Leak" << std::endl;
-	Tests::repeatChar('=', 27, WHITE);
+	Tests::repeatChar('=', 33, WHITE);
+	std::cout << "     Testing New Zombie Leak" << std::endl;
+	Tests::repeatChar('=', 33, WHITE);
 	Tests::testNewZombieLeak();
 
 	return (0);
