@@ -16,8 +16,8 @@ RM		=	rm -rf
 
 NAME	=	zombie
 BUILD	=	./build
-SRCS	=	src/Zombie.cpp src/randomChump.cpp \
-			src/newZombie.cpp src/main.cpp
+SRCS	=	src/main.cpp src/newZombie.cpp \
+			src/randomChump.cpp src/Zombie.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
