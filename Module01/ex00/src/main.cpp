@@ -33,7 +33,6 @@ namespace Tests {
 		zombie->announce();
 		delete zombie;  // Comment this line to leak memory
 	}
-
 }
 
 int	main ( void ) {
