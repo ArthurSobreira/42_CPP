@@ -39,6 +39,8 @@
 
 /* Error defines */
 #define ERROR_INVALID_ARGUMENTS \
-RED "Error: Invalid number of arguments" RESET
+RED "Error: Invalid Number of Arguments" RESET
+#define ERROR_NULL_ARGUMENT \
+RED "Error: Null Argument" RESET
 
 #endif
