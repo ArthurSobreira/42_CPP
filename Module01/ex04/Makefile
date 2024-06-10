@@ -46,6 +46,7 @@ $(BUILD):
 clean:
 	@echo $(RED)[Cleaning object files...]$(LIMITER)
 	@$(RM) $(BUILD)
+	@$(RM) *.replace
 
 fclean: clean
 	@echo $(RED)[Cleaning $(NAME) executable...]$(LIMITER)
