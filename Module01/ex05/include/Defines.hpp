@@ -37,4 +37,16 @@
 # define UNDER_CYAN "\033[4;36m"
 # define UNDER_WHITE "\033[4;37m"
 
+/* Messages Defines */
+# define MESSAGE_DEBUG "I love having extra bacon for my \
+7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"
+# define MESSAGE_INFO : "I cannot believe adding extra bacon costs more money. \
+You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!"
+# define MESSAGE_WARNING "I think I deserve to have some extra bacon for free. I've \
+been coming for years whereas you started working here since last month."
+# define MESSAGE_ERROR "This is unacceptable! I want to speak to the manager now."
+
+/* Error Defines */
+# define ERROR_INVALID_LEVEL RED "Error: Invalid Level." RESET
+
 #endif
