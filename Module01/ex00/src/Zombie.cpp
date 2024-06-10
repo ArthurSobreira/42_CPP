@@ -1,5 +1,5 @@
-#include "Zombie.hpp"
 #include "Defines.hpp"
+#include "Zombie.hpp"
 
 Zombie::Zombie( void ) {
 	std::cout << CYAN << "Zombie constructor called" \
