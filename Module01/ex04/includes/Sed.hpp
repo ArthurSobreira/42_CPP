@@ -24,7 +24,7 @@ class	Sed {
 		void	setReplacement( std::string replacement );
 
 		/* Public Methods */
-		void	replace( std::string filename );
+		int	replace( std::string filename );
 };
 
 #endif
