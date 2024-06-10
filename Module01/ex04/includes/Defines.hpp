@@ -37,4 +37,8 @@
 # define UNDER_CYAN "\033[4;36m"
 # define UNDER_WHITE "\033[4;37m"
 
+/* Error defines */
+#define ERROR_INVALID_ARGUMENTS \
+RED "Error: Invalid number of arguments" RESET
+
 #endif
