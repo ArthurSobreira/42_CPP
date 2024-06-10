@@ -5,7 +5,7 @@ Weapon::Weapon( std::string type ) : _type(type) {};
 Weapon::~Weapon( void ) {};
 
 /* Getter and Setter _name */
-std::string Weapon::getType( void ) const {
+const	std::string	Weapon::getType( void ) const {
 	return (this->_type);
 }
 
