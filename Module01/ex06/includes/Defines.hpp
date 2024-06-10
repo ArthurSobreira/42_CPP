@@ -47,7 +47,9 @@ been coming for years whereas you started working here since last month."
 # define MESSAGE_ERROR "This is unacceptable! I want to speak to the manager now."
 
 /* Error Defines */
-# define ERROR_INVALID_LEVEL RED "Error: Invalid Level." RESET
+#define ERROR_INVALID_ARGUMENTS \
+RED "Error: Invalid Number of Arguments." RESET
+# define ERROR_INVALID_LEVEL "[ Probably complaining about insignificant problems ]"
 
 /* Exit Defines */
 # define SUCCESS 0
