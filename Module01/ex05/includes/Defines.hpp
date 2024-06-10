@@ -40,7 +40,7 @@
 /* Messages Defines */
 # define MESSAGE_DEBUG "I love having extra bacon for my \
 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"
-# define MESSAGE_INFO : "I cannot believe adding extra bacon costs more money. \
+# define MESSAGE_INFO "I cannot believe adding extra bacon costs more money. \
 You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!"
 # define MESSAGE_WARNING "I think I deserve to have some extra bacon for free. I've \
 been coming for years whereas you started working here since last month."
@@ -48,5 +48,9 @@ been coming for years whereas you started working here since last month."
 
 /* Error Defines */
 # define ERROR_INVALID_LEVEL RED "Error: Invalid Level." RESET
+
+/* Exit Defines */
+# define SUCCESS 0
+# define FAILURE 1
 
 #endif
