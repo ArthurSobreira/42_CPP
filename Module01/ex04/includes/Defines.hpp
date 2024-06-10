@@ -42,5 +42,7 @@
 RED "Error: Invalid Number of Arguments" RESET
 #define ERROR_NULL_ARGUMENT \
 RED "Error: Null Argument" RESET
+#define ERROR_OPEN_FILE(filename) \
+RED << "Error: " << filename << " could not be opened." << RESET
 
 #endif
