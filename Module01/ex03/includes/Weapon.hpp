@@ -17,6 +17,6 @@ class	Weapon {
 		/* Getter and Setter _type */
 		const	std::string	getType( void ) const;
 		void	setType( std::string type );
-}
+};
 
 #endif
