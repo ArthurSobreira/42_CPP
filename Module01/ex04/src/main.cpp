@@ -18,7 +18,8 @@ int main(int argc, char **argv)
 
 	Sed is_for_losers(target, replacement);
 	if (is_for_losers.replace(filename) == SUCCESS) {
-		std::cout << SUCCESS_MESSAGE << std::endl;
+		std::cout << SUCCESS_MESSAGE(filename + ".replace") 
+			<< std::endl;
 		return (SUCCESS);
 	}
 	return (FAILURE);
