@@ -28,6 +28,12 @@ void	Harl::error( void ) {
 
 /* Public Methods */
 void	Harl::complain( std::string level ) {
+	std::string	levelList[4] = {
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
 	void	(Harl::*complainLevel[4])( void ) = {
 		&Harl::debug,
 		&Harl::info,
@@ -36,7 +42,7 @@ void	Harl::complain( std::string level ) {
 	};
 
 	for (int i = 0; i < 4; i++) {
-		if (level == LEVELS[i]) {
+		if (level == levelList[i]) {
 			return ((this->*complainLevel[i])());
 		}
 	}
