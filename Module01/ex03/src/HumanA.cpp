@@ -7,5 +7,5 @@ HumanA::~HumanA( void ) {};
 
 void	HumanA::attack( void ) {
 	std::cout << MAGENTA << this->_name << RESET << " attacks with their " << 
-	RED << this->_weapon.getType() << RESET << std::endl;
+	BLUE << this->_weapon.getType() << RESET << std::endl;
 }
