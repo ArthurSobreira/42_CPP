@@ -2,16 +2,16 @@
 #include <iostream>
 
 int	main ( void ) {
-	std::string	str = "HI THIS IS BRAIN";
-	std::string	*ptr = &str;
-	std::string	&ref = str;
+	std::string	string = "HI THIS IS BRAIN";
+	std::string	*stringPTR = &string;
+	std::string	&stringREF = string;
 
-	std::cout << "Address of the string: " << &str << std::endl;
-	std::cout << "Address of the string: " << ptr << std::endl;
-	std::cout << "Address of the string: " << &ref << std::endl;
-	std::cout << "String: " << str << std::endl;
-	std::cout << "String: " << *ptr << std::endl;
-	std::cout << "String: " << ref << std::endl;
+	std::cout << "Address of the string: " << &string << std::endl;
+	std::cout << "Address of the string: " << stringPTR << std::endl;
+	std::cout << "Address of the string: " << &stringREF << std::endl;
+	std::cout << "String value: " << string << std::endl;
+	std::cout << "String value: " << *stringPTR << std::endl;
+	std::cout << "String value: " << stringREF << std::endl;
 
 	return (0);
 }
