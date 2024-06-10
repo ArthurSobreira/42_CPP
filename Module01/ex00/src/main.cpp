@@ -3,7 +3,7 @@
 
 namespace Tests {
 	void	repeatChar( char c, int n, std::string color ) {
-		for (size_t i = 0; i < (size_t)n; i++) {
+		for (int i = 0; i < n; i++) {
 			std::cout << color << c;
 		}
 		std::cout << RESET << std::endl;
