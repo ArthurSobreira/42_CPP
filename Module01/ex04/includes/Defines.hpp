@@ -37,12 +37,18 @@
 # define UNDER_CYAN "\033[4;36m"
 # define UNDER_WHITE "\033[4;37m"
 
-/* Error defines */
+/* Exit Defines */
+# define SUCCESS 0
+# define FAILURE 1
+
+/* Error Defines */
 #define ERROR_INVALID_ARGUMENTS \
 RED "Error: Invalid Number of Arguments" RESET
 #define ERROR_NULL_ARGUMENT \
 RED "Error: Null Argument" RESET
 #define ERROR_OPEN_FILE(filename) \
 RED << "Error: " << filename << " could not be opened." << RESET
+#define SUCCESS_MESSAGE \
+GREEN "File successfully replaced." RESET
 
 #endif
