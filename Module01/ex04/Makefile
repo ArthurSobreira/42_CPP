@@ -16,7 +16,7 @@ RM		=	rm -rf
 
 NAME	=	sed_is_for_losers
 BUILD	=	./build
-SRCS	=	src/main.cpp
+SRCS	=	src/main.cpp src/Sed.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
