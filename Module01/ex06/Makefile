@@ -14,7 +14,7 @@ CC		=	c++
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I includes/
 RM		=	rm -rf
 
-NAME	=	harl_filter
+NAME	=	harlFilter
 BUILD	=	./build
 SRCS	=	src/Harl.cpp src/main.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
