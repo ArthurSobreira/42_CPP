@@ -49,7 +49,7 @@ class Fixed {
 		Fixed	&operator--( void );
 		Fixed	operator--( int );
 
-		/* Min and Max */
+		/* Min and Max Operators */
 		static Fixed	&min( Fixed &a, Fixed &b );
 		static Fixed	&max( Fixed &a, Fixed &b );
 		static Fixed const	&min( Fixed const &a, Fixed const &b );
