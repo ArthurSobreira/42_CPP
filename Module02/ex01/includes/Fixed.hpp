@@ -9,7 +9,7 @@ class Fixed {
 		static const int _fractionalBits = 8;
 
 	public:
-		/* Constructor Method */
+		/* Constructor Methods */
 		Fixed( void );
 		Fixed( int const value );
 		Fixed( float const value );
