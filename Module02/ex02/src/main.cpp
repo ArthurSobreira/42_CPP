@@ -70,10 +70,10 @@ namespace Tests {
 	}
 
 	void	testMinMaxOperators( void ) {
-		Fixed a( 0 );
-		Fixed b( 2 );
-		Fixed const c( 5 );
-		Fixed const d( 3 );
+		Fixed const	a( 0 );
+		Fixed const	b( 2 );
+		Fixed c( 5 );
+		Fixed d( 3 );
 
 		std::cout << "a is " << a << std::endl;
 		std::cout << "b is " << b << std::endl;
