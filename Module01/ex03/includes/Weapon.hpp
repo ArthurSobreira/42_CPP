@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class	Weapon {
+class Weapon {
 	private:
 		std::string _type;
 
