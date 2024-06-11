@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class	Sed {
+class Sed {
 	private:
 		std::string	_target;
 		std::string	_replacement;
