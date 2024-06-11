@@ -17,10 +17,10 @@ class Point {
 		Point( const Point &other );
 
 		/* Copy Assignment Operator Overload */
-		Point &operator=(const Point &other);
+		Point &operator=( const Point &other );
 
 		/* Destructor Method */
-		~Point();
+		~Point( void );
 
 		/* Getter Methods */
 		Fixed const	getX( void ) const;
