@@ -20,6 +20,7 @@ Fixed::~Fixed( void ) {
 	std::cout << "Destructor called" << std::endl;
 }
 
+/* Getter and Setter RawBits */
 int	Fixed::getRawBits( void ) const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedPointValue);
