@@ -13,8 +13,8 @@ Point::Point( const Point &other ) {
 /* Copy Assignment Operator Overload */
 Point &Point::operator=( const Point &other ) {
 	if (this != &other) {
-		this->_x = other.getX();
-		this->_y = other.getY();
+		const_cast<Fixed&>(_x) = other.getX();
+		const_cast<Fixed&>(_y) = other.getY();
 	}
 	return (*this);
 }
