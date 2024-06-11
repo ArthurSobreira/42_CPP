@@ -16,7 +16,7 @@ RM		=	rm -rf
 
 NAME	=	ultimate_fixed
 BUILD	=	./build
-SRCS	=	src/Fixed.cpp src/main.cpp
+SRCS	=	src/Fixed.cpp src/FixedOperators.cpp src/main.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
