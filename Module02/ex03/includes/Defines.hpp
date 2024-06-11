@@ -37,4 +37,8 @@
 # define UNDER_CYAN "\033[4;36m"
 # define UNDER_WHITE "\033[4;37m"
 
+/* Message Defines */
+# define YES BOLD_GREEN "Yes" RESET
+# define NO BOLD_RED "No" RESET
+
 #endif
