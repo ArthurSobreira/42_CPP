@@ -53,6 +53,22 @@ namespace Tests {
 		std::cout << "--a is " << --a << std::endl;
 		std::cout << "--b is " << --b << std::endl;
 	}
+
+	void	testMinMaxOperators( void ) {
+		Fixed a( 0 );
+		Fixed b( 2 );
+		Fixed const c( 5 );
+		Fixed const d( 3 );
+
+		std::cout << "a is " << a << std::endl;
+		std::cout << "b is " << b << std::endl;
+		std::cout << "min(a, b) is " << Fixed::min(a, b) << std::endl;
+		std::cout << "max(a, b) is " << Fixed::max(a, b) << std::endl;
+		std::cout << "c is " << c << std::endl;
+		std::cout << "d is " << d << std::endl;
+		std::cout << "min(c, d) is " << Fixed::min(c, d) << std::endl;
+		std::cout << "max(c, d) is " << Fixed::max(c, d) << std::endl;
+	}
 }
 
 int main( void ) {
@@ -71,5 +87,9 @@ int main( void ) {
 	Tests::repeatChar('=', 51, WHITE);
 	Tests::testIncrementDecrementOperators();
 
+	Tests::repeatChar('=', 39, WHITE);
+	std::cout << "     Testing Min and Max Operators" << std::endl;
+	Tests::repeatChar('=', 39, WHITE);
+	Tests::testMinMaxOperators();
 	return (0);
 }
