@@ -10,6 +10,21 @@ namespace Tests {
 		std::cout << RESET << std::endl;
 	}
 
+	void	testSubject( void ) {
+		Fixed 		a;
+		Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+		std::cout << a << std::endl;
+		std::cout << ++a << std::endl;
+		std::cout << a << std::endl;
+		std::cout << a++ << std::endl;
+		std::cout << a << std::endl;
+
+		std::cout << b << std::endl;
+
+		std::cout << Fixed::max( a, b ) << std::endl;
+	}
+
 	void	testComparisonOperators( void ) {
 		Fixed const a( 10 );
 		Fixed const b( 20 );
@@ -72,6 +87,11 @@ namespace Tests {
 }
 
 int main( void ) {
+	Tests::repeatChar('=', 25, WHITE);
+	std::cout << "     Testing Subject" << std::endl;
+	Tests::repeatChar('=', 25, WHITE);
+	Tests::testSubject();
+
 	Tests::repeatChar('=', 38, WHITE);
 	std::cout << "     Testing Comparison Operators" << std::endl;
 	Tests::repeatChar('=', 38, WHITE);
