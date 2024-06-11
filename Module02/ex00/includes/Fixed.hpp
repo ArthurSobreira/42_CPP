@@ -16,10 +16,10 @@ class Fixed {
 		Fixed( const Fixed &other );
 
 		/* Copy Assignment Operator Overload */
-		Fixed &operator=(const Fixed &other);
+		Fixed &operator=( const Fixed &other );
 
 		/* Destructor Method */
-		~Fixed();
+		~Fixed( void );
 
 		/* Public Methods */
 		int		getRawBits( void ) const;
