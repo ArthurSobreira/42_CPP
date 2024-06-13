@@ -4,6 +4,9 @@
 /* Color Reset */
 # define RESET "\033[0m"
 
+/* Colorize Macro */
+# define COLORIZE(color, text) color << text << RESET
+
 /* Regular Colors */
 # define BLACK "\033[30m"
 # define GRAY "\033[90m"
@@ -36,5 +39,19 @@
 # define UNDER_MAGENTA "\033[4;35m"
 # define UNDER_CYAN "\033[4;36m"
 # define UNDER_WHITE "\033[4;37m"
+
+/* Messages Defines */
+# define ATTACK_MESSAGE(name, target, damage) \
+"ClapTrap " << COLORIZE(CYAN, name) << " attacks " << COLORIZE(YELLOW, target) \
+<< ", causing " << COLORIZE(RED, damage) << " points of damage!"
+# define TAKE_DAMAGE_MESSAGE(name, amount) \
+"ClapTrap " << COLORIZE(CYAN, name) << " takes " \
+<< COLORIZE(RED, amount) << " damage!"
+# define NO_ENERGY_MESSAGE(name) \
+"ClapTrap " << COLORIZE(CYAN, name) << " has no energy points left!"
+# define ALREADY_DEAD_MESSAGE(name) \
+"ClapTrap " << COLORIZE(CYAN, name) << " is already dead!"
+# define DEATH_MESSAGE(name) \
+"ClapTrap " << COLORIZE(CYAN, name) << " has just been killed!"
 
 #endif
