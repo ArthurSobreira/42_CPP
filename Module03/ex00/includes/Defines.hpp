@@ -47,6 +47,10 @@
 # define TAKE_DAMAGE_MESSAGE(name, amount) \
 "ClapTrap " << COLORIZE(CYAN, name) << " takes " \
 << COLORIZE(RED, amount) << " damage!"
+# define BE_REPAIRED_MESSAGE(name, amount) \
+"ClapTrap " << COLORIZE(CYAN, name) << " is being repaired by " \
+<< COLORIZE(MAGENTA, amount) << " points"
+
 # define NO_ENERGY_MESSAGE(name) \
 "ClapTrap " << COLORIZE(CYAN, name) << " has no energy points left!"
 # define ALREADY_DEAD_MESSAGE(name) \
