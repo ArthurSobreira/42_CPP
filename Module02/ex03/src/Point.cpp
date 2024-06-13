@@ -20,7 +20,7 @@ Point &Point::operator=( const Point &other ) {
 }
 
 /* Destructor Method */
-Point::~Point() {};
+Point::~Point( void ) {};
 
 /* Getter Methods */
 Fixed const	Point::getX( void ) const {
