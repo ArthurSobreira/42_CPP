@@ -16,7 +16,7 @@ RM		=	rm -rf
 
 NAME	=	ClapTrap
 BUILD	=	./build
-SRCS	=	src/ClapTrap.cpp src/main.cpp
+SRCS	=	src/ClapTrap.cpp src/ClapTrapGS.cpp src/main.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
