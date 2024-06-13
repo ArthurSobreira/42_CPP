@@ -58,3 +58,13 @@ void	ClapTrap::takeDamage( unsigned int amount ) {
 		this->setHitPoints(0);
 	}
 }
+
+void	ClapTrap::beRepaired( unsigned int amount ) {
+	if (this->getEnergyPoints() == 0) {
+		std::cout << NO_ENERGY_MESSAGE(this->getName()) << std::endl;
+		return ;
+	}
+	std::cout << BE_REPAIRED_MESSAGE(this->getName(), amount) << std::endl;
+	this->setHitPoints(this->getHitPoints() + amount);
+	this->setEnergyPoints(this->getEnergyPoints() - 1);
+}
