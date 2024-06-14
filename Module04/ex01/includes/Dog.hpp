@@ -2,9 +2,13 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
 class Dog : public Animal {
+	private:
+		Brain *_brain;
+
 	public:
 		/* Constructor Method */
 		Dog( void );
@@ -20,6 +24,7 @@ class Dog : public Animal {
 
 		/* Public Method */
 		void makeSound( void ) const;
+		Brain *getBrain( void ) const;
 };
 
 #endif
