@@ -1,11 +1,11 @@
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 #include <iostream>
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 	private:
 		Brain *_brain;
 
