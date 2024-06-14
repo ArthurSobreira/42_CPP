@@ -8,7 +8,7 @@ class Animal {
         std::string _type;
 
     public:
-        /* Constructor Methods */
+        /* Constructor Method */
         Animal( void );
 
         /* Copy Constructor Method */
@@ -23,7 +23,7 @@ class Animal {
         /* Getter _type Method */
         std::string getType( void ) const;
         
-        /* Public Methods */
+        /* Public Method */
         virtual void makeSound( void ) const;
 };
 
