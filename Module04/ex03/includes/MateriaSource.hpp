@@ -27,4 +27,4 @@ class MateriaSource : public IMateriaSource {
 		AMateria *createMateria( std::string const &type );
 };
 
-#endif // MATERIASOURCE_HPP_
+#endif
