@@ -83,5 +83,3 @@ void Character::use( int idx, ICharacter &target ) {
 		std::cout << "Invalid index" << std::endl;
 	}
 }
-
-const
