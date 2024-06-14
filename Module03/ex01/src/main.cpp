@@ -1,5 +1,5 @@
 #include "Defines.hpp"
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 namespace Tests {
 	void	repeatChar( char c, int n, std::string color ) {
@@ -10,39 +10,43 @@ namespace Tests {
 	}
 
 	void	testDefaultConstructor( void ) {
-		ClapTrap clap1;
+		ScavTrap scav1;
 		
-		clap1.attack("Target1");
-		clap1.takeDamage(5);
-		clap1.beRepaired(3);
+		scav1.attack("Target1");
+		scav1.takeDamage(5);
+		scav1.beRepaired(3);
+		scav1.guardGate();
 	}
 
 	void	testNameConstructor( void ) {
-		ClapTrap clap2("Clappy");
+		ScavTrap scav2("Scavvy");
 		
-		clap2.attack("Target2");
-		clap2.takeDamage(8);
-		clap2.setEnergyPoints(0);
-		clap2.beRepaired(4);
+		scav2.attack("Target2");
+		scav2.takeDamage(8);
+		scav2.setEnergyPoints(0);
+		scav2.beRepaired(4);
+		scav2.guardGate();
 	}
 
 	void	testCopyConstructor( void ) {
-		ClapTrap clap3("Clappy");
-		ClapTrap clap4(clap3);
+		ScavTrap scav3("Scavvy");
+		ScavTrap scav4(scav3);
 		
-		clap4.attack("Target3");
-		clap4.takeDamage(10);
-		clap4.beRepaired(5);
+		scav4.attack("Target3");
+		scav4.takeDamage(10);
+		scav4.beRepaired(5);
+		scav4.guardGate();
 	}
 
 	void	testCopyAssignmentOperator( void ) {
-		ClapTrap clap5("Clappy");
-		ClapTrap clap6("Claptrap");
+		ScavTrap scav5("Scavvy");
+		ScavTrap scav6("Scavtrap");
 		
-		clap6 = clap5;
-		clap6.attack("Target4");
-		clap6.takeDamage(15);
-		clap6.beRepaired(6);
+		scav6 = scav5;
+		scav6.attack("Target4");
+		scav6.takeDamage(15);
+		scav6.beRepaired(6);
+		scav6.guardGate();
 	}
 }
 
