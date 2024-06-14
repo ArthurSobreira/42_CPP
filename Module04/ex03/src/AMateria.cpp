@@ -38,5 +38,5 @@ std::string const &AMateria::getType( void ) const {
 
 /* Public Method */
 void AMateria::use( ICharacter & target ) {
-	std::cout << "AMateria Used in Targed " target.getName() << std::endl;
+	std::cout << "AMateria Used in Targed " << target.getName() << std::endl;
 }
