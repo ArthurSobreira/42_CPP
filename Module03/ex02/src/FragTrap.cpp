@@ -23,7 +23,7 @@ FragTrap::FragTrap( const FragTrap &other ) : ClapTrap( other ) {
 }
 
 /* Copy Assignment Operator Overload */
-FragTrap &FragTrap::operator=( const ScavTrap &other ) {
+FragTrap &FragTrap::operator=( const FragTrap &other ) {
 	std::cout << "FragTrap Copy Assignment Operator called" << std::endl;
 	if (this != &other) {
 		this->_name = other.getName();
