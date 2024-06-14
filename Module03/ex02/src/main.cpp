@@ -33,7 +33,7 @@ namespace Tests {
 		FragTrap frag4(frag3);
 		
 		frag4.attack("Target3");
-		frag4.takeDamage(10);
+		frag4.takeDamage(100);
 		frag4.beRepaired(5);
 		frag4.highFivesGuys();
 	}
@@ -44,7 +44,7 @@ namespace Tests {
 		
 		frag6 = frag5;
 		frag6.attack("Target4");
-		frag6.takeDamage(15);
+		frag6.takeDamage(150);
 		frag6.beRepaired(6);
 		frag6.highFivesGuys();
 	}
@@ -70,6 +70,6 @@ int main( void ) {
 	std::cout << "     Testing Copy Assignment Operator" << std::endl;
 	Tests::repeatChar('=', 42, CYAN);
 	Tests::testCopyAssignmentOperator();
-	
+
 	return (0);
 }
