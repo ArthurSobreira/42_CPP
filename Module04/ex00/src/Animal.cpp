@@ -26,9 +26,13 @@ Animal::~Animal( void ) {
 	std::cout << "Animal Destructor called" << std::endl;
 }
 
-/* Getter _type Method */
+/* Getter and Setter _type */
 std::string Animal::getType( void ) const {
 	return (this->_type);
+}
+
+void	Animal::setType( std::string type ) {
+	this->_type = type;
 }
 
 /* Public Method */
