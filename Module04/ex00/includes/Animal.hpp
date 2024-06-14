@@ -18,7 +18,7 @@ class Animal {
         Animal &operator=( const Animal &other );
 
         /* Destructor Method */
-        ~Animal( void );
+        virtual ~Animal( void );
 
         /* Getter _type Method */
         std::string getType( void ) const;
