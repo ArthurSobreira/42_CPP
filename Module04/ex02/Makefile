@@ -16,7 +16,7 @@ RM		=	rm -rf
 
 NAME	=	AbstractAnimal
 BUILD	=	./build
-SRCS	=	src/Animal.cpp src/Brain.cpp src/Cat.cpp src/Dog.cpp \
+SRCS	=	src/AAnimal.cpp src/Brain.cpp src/Cat.cpp src/Dog.cpp \
 			src/main.cpp src/WrongAnimal.cpp src/WrongCat.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
