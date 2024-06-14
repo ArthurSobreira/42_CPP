@@ -1,5 +1,5 @@
 #include "Defines.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 namespace Tests {
 	void	repeatChar( char c, int n, std::string color ) {
@@ -10,43 +10,51 @@ namespace Tests {
 	}
 
 	void	testDefaultConstructor( void ) {
-		FragTrap frag1;
+		DiamondTrap diam1;
 		
-		frag1.attack("Target1");
-		frag1.takeDamage(5);
-		frag1.beRepaired(3);
-		frag1.highFivesGuys();
+		diam1.attack("Target1");
+		diam1.takeDamage(5);
+		diam1.beRepaired(3);
+		diam1.guardGate();
+		diam1.highFivesGuys();
+		diam1.whoAmI();
 	}
 
 	void	testNameConstructor( void ) {
-		FragTrap frag2("Fraggy");
+		DiamondTrap diam2("Diamondy");
 		
-		frag2.attack("Target2");
-		frag2.takeDamage(8);
-		frag2.setEnergyPoints(0);
-		frag2.beRepaired(4);
-		frag2.highFivesGuys();
+		diam2.attack("Target2");
+		diam2.takeDamage(8);
+		diam2.setEnergyPoints(0);
+		diam2.beRepaired(4);
+		diam2.guardGate();
+		diam2.highFivesGuys();
+		diam2.whoAmI();
 	}
 
 	void	testCopyConstructor( void ) {
-		FragTrap frag3("Fraggy");
-		FragTrap frag4(frag3);
+		DiamondTrap diam3("Diamondy");
+		DiamondTrap diam4(diam3);
 		
-		frag4.attack("Target3");
-		frag4.takeDamage(100);
-		frag4.beRepaired(5);
-		frag4.highFivesGuys();
+		diam4.attack("Target3");
+		diam4.takeDamage(100);
+		diam4.beRepaired(5);
+		diam4.guardGate();
+		diam4.highFivesGuys();
+		diam4.whoAmI();
 	}
 
 	void	testCopyAssignmentOperator( void ) {
-		FragTrap frag5("Fraggy");
-		FragTrap frag6("Fragtrap");
+		DiamondTrap diam5("Diamondy");
+		DiamondTrap diam6("Diamtrap");
 		
-		frag6 = frag5;
-		frag6.attack("Target4");
-		frag6.takeDamage(150);
-		frag6.beRepaired(6);
-		frag6.highFivesGuys();
+		diam6 = diam5;
+		diam6.attack("Target4");
+		diam6.takeDamage(150);
+		diam6.beRepaired(6);
+		diam6.guardGate();
+		diam6.highFivesGuys();
+		diam6.whoAmI();
 	}
 }
 
