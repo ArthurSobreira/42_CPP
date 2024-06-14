@@ -4,8 +4,8 @@
 /* Constructor Methods */
 DiamondTrap::DiamondTrap( void ) : FragTrap(), ScavTrap() {
 	std::cout << "DiamondTrap Default Constructor called" << std::endl;
-	this->_name = "Default";
-	ClapTrap::_name = std::string("Default") + "_clap_name";
+	this->_name = "Guest";
+	ClapTrap::_name = this->_name + "_clap_name";
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 30;
