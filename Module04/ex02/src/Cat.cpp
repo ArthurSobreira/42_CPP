@@ -2,14 +2,14 @@
 #include "Cat.hpp"
 
 /* Constructor Method */
-Cat::Cat( void ) : Animal() {
+Cat::Cat( void ) : AAnimal() {
 	std::cout << "Cat Default Constructor called" << std::endl;
 	this->setType("Cat");
 	this->_brain = new Brain();
 }
 
 /* Copy Constructor Method */
-Cat::Cat( const Cat &other ) : Animal(other) {
+Cat::Cat( const Cat &other ) : AAnimal(other) {
 	std::cout << "Cat Copy Constructor called" << std::endl;
 	this->_brain = new Brain();
 	*this = other;
