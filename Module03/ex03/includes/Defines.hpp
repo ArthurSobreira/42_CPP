@@ -69,4 +69,9 @@
 # define HIGH_FIVES_MESSAGE(name) \
 "FragTrap " << COLORIZE(CYAN, name) << " wants to high five!"
 
+/* DiamondTrap Messages */
+#define WHO_AM_I_MESSAGE(dt_name, ct_name) \
+"DiamondTrap Name: " << COLORIZE(CYAN, dt_name) << std::endl << \
+"ClapTrap Name: " << COLORIZE(CYAN, ct_name)
+
 #endif
