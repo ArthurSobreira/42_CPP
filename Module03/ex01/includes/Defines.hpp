@@ -58,4 +58,11 @@
 # define DEATH_MESSAGE(name) \
 "ClapTrap " << COLORIZE(CYAN, name) << " has just been killed!"
 
+/* ScavTrap Messages */
+# define ST_ATTACK_MESSAGE(name, target, damage) \
+"ScavTrap " << COLORIZE(CYAN, name) << " attacks " << COLORIZE(YELLOW, target) \
+<< ", causing " << COLORIZE(RED, damage) << " points of damage!"
+# define GUARD_GATE_MESSAGE(name) \
+"ScavTrap " << COLORIZE(CYAN, name) << " has entered in Gate keeper mode!"
+
 #endif
