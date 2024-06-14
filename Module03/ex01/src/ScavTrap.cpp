@@ -42,7 +42,11 @@ ScavTrap::~ScavTrap( void ) {
 /* Public Methods */
 void	ScavTrap::attack( const std::string &target ) {
 	if (this->getEnergyPoints() == 0) {
-		std::cout << NO_ENERGY_MESSAGE(this->getName()) << std::endl;
+		std::cout << ST_NO_ENERGY_MESSAGE(this->getName()) << std::endl;
+		return ;
+	}
+	else if (this->getHitPoints() == 0) {
+		std::cout << ST_ALREADY_DEAD_MESSAGE(this->getName()) << std::endl;
 		return ;
 	}
 	std::cout << ST_ATTACK_MESSAGE(this->getName(), target, \
