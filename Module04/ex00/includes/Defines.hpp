@@ -45,5 +45,7 @@
 "Animal " << COLORIZE(YELLOW, name) << " makes an animal sound!"
 # define CAT_SOUND_MESSAGE(name) \
 "Cat " << COLORIZE(YELLOW, name) << " makes a cat sound!"
+# define DOG_SOUND_MESSAGE(name) \
+"Dog " << COLORIZE(YELLOW, name) << " makes a dog sound!"
 
 #endif
