@@ -41,6 +41,10 @@ void	ClapTrap::attack( const std::string &target ) {
 		std::cout << NO_ENERGY_MESSAGE(this->getName()) << std::endl;
 		return ;
 	}
+	else if (this->getHitPoints() == 0) {
+		std::cout << ALREADY_DEAD_MESSAGE(this->getName()) << std::endl;
+		return ;
+	}
 	std::cout << ATTACK_MESSAGE(this->getName(), target, \
 	this->getAttackDamage()) << std::endl;
 	this->setEnergyPoints(this->getEnergyPoints() - 1);
@@ -62,6 +66,10 @@ void	ClapTrap::takeDamage( unsigned int amount ) {
 void	ClapTrap::beRepaired( unsigned int amount ) {
 	if (this->getEnergyPoints() == 0) {
 		std::cout << NO_ENERGY_MESSAGE(this->getName()) << std::endl;
+		return ;
+	}
+	else if (this->getHitPoints() == 0) {
+		std::cout << ALREADY_DEAD_MESSAGE(this->getName()) << std::endl;
 		return ;
 	}
 	std::cout << BE_REPAIRED_MESSAGE(this->getName(), amount) << std::endl;
