@@ -65,4 +65,8 @@
 # define GUARD_GATE_MESSAGE(name) \
 "ScavTrap " << COLORIZE(CYAN, name) << " has entered in Gate keeper mode!"
 
+/* FragTrap Messages */
+# define HIGH_FIVES_MESSAGE(name) \
+"FragTrap " << COLORIZE(CYAN, name) << " wants to high five!"
+
 #endif
