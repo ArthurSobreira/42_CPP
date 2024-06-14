@@ -11,10 +11,10 @@ class FragTrap : public ClapTrap {
 		FragTrap( const std::string &name );
 
 		/* Copy Constructor Method */
-		FragTrap(const FragTrap &other);
+		FragTrap( const FragTrap &other );
 
 		/* Copy Assignment Operator Overload */
-		FragTrap &operator=(const FragTrap &other);
+		FragTrap &operator=( const FragTrap &other );
 
 		/* Destructor Method */
 		~FragTrap( void );
