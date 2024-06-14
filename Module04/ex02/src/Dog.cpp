@@ -2,14 +2,14 @@
 #include "Dog.hpp"
 
 /* Constructor Method */
-Dog::Dog( void ) : Animal() {
+Dog::Dog( void ) : AAnimal() {
 	std::cout << "Dog Default Constructor called" << std::endl;
 	this->setType("Dog");
 	this->_brain = new Brain();
 }
 
 /* Copy Constructor Method */
-Dog::Dog( const Dog &other ) : Animal(other) {
+Dog::Dog( const Dog &other ) : AAnimal(other) {
 	std::cout << "Dog Copy Constructor called" << std::endl;
 	this->_brain = new Brain();
 	*this = other;
