@@ -62,6 +62,10 @@
 # define ST_ATTACK_MESSAGE(name, target, damage) \
 "ScavTrap " << COLORIZE(CYAN, name) << " attacks " << COLORIZE(YELLOW, target) \
 << ", causing " << COLORIZE(RED, damage) << " points of damage!"
+# define ST_NO_ENERGY_MESSAGE(name) \
+"ScavTrap " << COLORIZE(CYAN, name) << " has no energy points left!"
+# define ST_ALREADY_DEAD_MESSAGE(name) \
+"ScavTrap " << COLORIZE(CYAN, name) << " is already dead!"
 # define GUARD_GATE_MESSAGE(name) \
 "ScavTrap " << COLORIZE(CYAN, name) << " has entered in Gate keeper mode!"
 
