@@ -14,13 +14,13 @@ ClapTrap::ClapTrap( const std::string &name ) : _name(name),
 
 /* Copy Constructor Method */
 ClapTrap::ClapTrap( const ClapTrap &other ) {
-	std::cout <<  "Copy constructor called" << std::endl;
+	std::cout <<  "ClapTrap Copy Constructor called" << std::endl;
 	*this = other;
 }
 
 /* Copy Assignment Operator Overload */
 ClapTrap &ClapTrap::operator=( const ClapTrap &other ) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap Copy Assignment Operator called" << std::endl;
 	if (this != &other) {
 		this->_name = other.getName();
 		this->_hitPoints = other.getHitPoints();
@@ -32,7 +32,7 @@ ClapTrap &ClapTrap::operator=( const ClapTrap &other ) {
 
 /* Destructor Method */
 ClapTrap::~ClapTrap ( void ) {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 /* Public Methods */
