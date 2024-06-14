@@ -1,7 +1,7 @@
 #include "Defines.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
@@ -13,7 +13,7 @@ namespace Tests {
 		std::cout << RESET << std::endl;
 	}
 
-	static void	printAnimalsIdeas( const Animal *animals[], int n) {
+	static void	printAnimalsIdeas( const AAnimal *animals[], int n) {
 		for (int i = 0; i < n; i++) {
 			animals[i]->makeSound();
 			const Cat	*cat = dynamic_cast<const Cat*>(animals[i]);
@@ -31,7 +31,7 @@ namespace Tests {
 	}
 
 	void	testAnimalArray( void ) {
-		const Animal *animals[4] = {
+		const AAnimal *animals[4] = {
 			new Cat(), new Dog(),
 			new Cat(), new Dog()
 		};
@@ -56,40 +56,6 @@ namespace Tests {
 			delete animals[i];
 		}
 	}
-
-	void	testDeepCopyCat( void ) {
-		Cat cat1;
-		Cat cat2 = cat1;
-
-		std::cout << std::endl;
-		std::cout << "Original and copied Cat objects after copy:" << std::endl;
-		std::cout << "cat1 Brain address: " << cat1.getBrain() << std::endl;
-		std::cout << "cat2 Brain address: " << cat2.getBrain() << std::endl;
-
-		cat2.getBrain()->setIdea(0, "New idea for cat2");
-
-		std::cout << "Original and copied Cat objects after modification:" << std::endl;
-		std::cout << "cat1 Brain idea: " << cat1.getBrain()->getIdea(0) << std::endl;
-		std::cout << "cat2 Brain idea: " << cat2.getBrain()->getIdea(0) << std::endl;
-		std::cout << std::endl;
-	}
-
-	void	testDeepCopyDog( void ) {
-		Dog dog1;
-		Dog dog2 = dog1;
-
-		std::cout << std::endl;
-		std::cout << "Original and copied Dog objects after copy:" << std::endl;
-		std::cout << "dog1 Brain address: " << dog1.getBrain() << std::endl;
-		std::cout << "dog2 Brain address: " << dog2.getBrain() << std::endl;
-
-		dog2.getBrain()->setIdea(0, "New idea for dog2");
-
-		std::cout << "Original and copied Dog objects after modification:" << std::endl;
-		std::cout << "dog1 Brain idea: " << dog1.getBrain()->getIdea(0) << std::endl;
-		std::cout << "dog2 Brain idea: " << dog2.getBrain()->getIdea(0) << std::endl;
-		std::cout << std::endl;
-	}
 }
 
 int main( void ) {
@@ -98,15 +64,8 @@ int main( void ) {
 	Tests::repeatChar('=', 37, CYAN);
 	Tests::testAnimalArray();
 
-	Tests::repeatChar('=', 40, CYAN);
-	std::cout << "          Deep Copy Test (Cat)" << std::endl;
-	Tests::repeatChar('=', 40, CYAN);
-	Tests::testDeepCopyCat();
+	/* AAnimal animal;  // This will cause a compile error
 
-	Tests::repeatChar('=', 40, CYAN);
-	std::cout << "          Deep Copy Test (Dog)" << std::endl;
-	Tests::repeatChar('=', 40, CYAN);
-	Tests::testDeepCopyDog();
-
+	animal.makeSound(); */
 	return (0);
 }
