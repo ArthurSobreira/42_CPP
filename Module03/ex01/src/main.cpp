@@ -33,7 +33,7 @@ namespace Tests {
 		ScavTrap scav4(scav3);
 		
 		scav4.attack("Target3");
-		scav4.takeDamage(10);
+		scav4.takeDamage(100);
 		scav4.beRepaired(5);
 		scav4.guardGate();
 	}
@@ -44,7 +44,7 @@ namespace Tests {
 		
 		scav6 = scav5;
 		scav6.attack("Target4");
-		scav6.takeDamage(15);
+		scav6.takeDamage(150);
 		scav6.beRepaired(6);
 		scav6.guardGate();
 	}
