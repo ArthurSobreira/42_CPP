@@ -26,7 +26,7 @@ class ClapTrap {
 
 		/* Getter and Setter _name */
 		std::string	getName( void ) const;
-		void	setName( std::string name);
+		void	setName( std::string name );
 
 		/* Getter and Setter _hitPoints */
 		int		getHitPoints( void ) const;
