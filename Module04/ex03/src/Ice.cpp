@@ -15,7 +15,7 @@ Ice::Ice( const Ice &other ) : AMateria(other) {
 /* Copy Assignment Operator Overload */
 Ice &Ice::operator=( const Ice &other ) {
 	std::cout << "Ice Copy Assignment Operator called" << std::endl;
-	(void)&other
+	(void)other;
 	this->_type = "ice";
 	return (*this);
 }
