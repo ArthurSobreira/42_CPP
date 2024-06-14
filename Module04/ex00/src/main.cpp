@@ -13,7 +13,7 @@ namespace Tests {
 		std::cout << RESET << std::endl;
 	}
 
-	void	animalTest( void ) {
+	void	testAnimal( void ) {
 		const Animal* animal = new Animal();
 		const Animal* dog = new Dog();
 		const Animal* cat = new Cat();
@@ -29,7 +29,7 @@ namespace Tests {
 		delete cat;
 	}
 
-	void	wrongAnimalTest( void ) {
+	void	testWrongAnimal( void ) {
 		const WrongAnimal* wrongAnimal = new WrongAnimal();
 		const WrongAnimal* wrongCat = new WrongCat();
 
@@ -46,12 +46,12 @@ int main( void ) {
 	Tests::repeatChar('=', 31, CYAN);
 	std::cout << "          Animal Test" << std::endl;
 	Tests::repeatChar('=', 31, CYAN);
-	Tests::animalTest();
+	Tests::testAnimal();
 
 	Tests::repeatChar('=', 36, CYAN);
 	std::cout << "          WrongAnimal Test" << std::endl;
 	Tests::repeatChar('=', 36, CYAN);
-	Tests::wrongAnimalTest();
+	Tests::testWrongAnimal();
 
 	return (0);
 }
