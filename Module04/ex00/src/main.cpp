@@ -32,10 +32,12 @@ namespace Tests {
 	void	testWrongAnimal( void ) {
 		const WrongAnimal* wrongAnimal = new WrongAnimal();
 		const WrongAnimal* wrongCat = new WrongCat();
+		const WrongCat* wrongCat2 = new WrongCat();
 
 		std::cout << wrongCat->getType() << " " << std::endl;
-		wrongCat->makeSound();
 		wrongAnimal->makeSound();
+		wrongCat->makeSound();
+		wrongCat2->makeSound();
 
 		delete wrongAnimal;
 		delete wrongCat;
