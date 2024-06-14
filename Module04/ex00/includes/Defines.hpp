@@ -51,5 +51,7 @@
 << COLORIZE(CYAN, "(Woof Woof)") << "!"
 # define WRONGANIMAL_SOUND_MESSAGE(name) \
 "WrongAnimal " << COLORIZE(YELLOW, name) << " makes a wrong animal sound!"
+# define WRONGCAT_SOUND_MESSAGE(name) \
+"WrongCat " << COLORIZE(YELLOW, name) << " makes a wrong cat sound " \
 
 #endif
