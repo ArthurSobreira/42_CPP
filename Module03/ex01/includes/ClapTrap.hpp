@@ -20,7 +20,7 @@ class ClapTrap {
 
 		/* Copy Assignment Operator Overload */
 		ClapTrap &operator=( const ClapTrap &other );
-	
+
 		/* Destructor Method */
 		~ClapTrap( void );
 
