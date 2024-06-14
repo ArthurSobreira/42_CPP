@@ -43,5 +43,7 @@
 /* Messages Defines */
 # define ANIMAL_SOUND_MESSAGE(name) \
 "Animal " << COLORIZE(YELLOW, name) << " makes an animal sound!"
+# define CAT_SOUND_MESSAGE(name) \
+"Cat " << COLORIZE(YELLOW, name) << " makes a cat sound!"
 
 #endif
