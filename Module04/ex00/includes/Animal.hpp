@@ -20,8 +20,9 @@ class Animal {
         /* Destructor Method */
         virtual ~Animal( void );
 
-        /* Getter _type Method */
+        /* Getter and Setter _type */
         std::string getType( void ) const;
+        void setType( std::string type );
         
         /* Public Method */
         virtual void makeSound( void ) const;
