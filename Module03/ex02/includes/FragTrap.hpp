@@ -14,7 +14,7 @@ class FragTrap : public ClapTrap {
 		FragTrap(const FragTrap &other);
 
 		/* Copy Assignment Operator Overload */
-		FragTrap &operator=(const FragTrap &rhs);
+		FragTrap &operator=(const FragTrap &other);
 
 		/* Destructor Method */
 		~FragTrap( void );
