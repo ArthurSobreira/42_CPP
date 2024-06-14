@@ -66,5 +66,6 @@ int main( void ) {
 	std::cout << "     Testing Copy Assignment Operator" << std::endl;
 	Tests::repeatChar('=', 42, CYAN);
 	Tests::testCopyAssignmentOperator();
+	
 	return (0);
 }
