@@ -10,7 +10,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat( void );
 
 		/* Copy Constructor Method */
-		WrongCat( const Cat &other );
+		WrongCat( const WrongCat &other );
 
 		/* Copy Assignment Operator Overload */
 		WrongCat &operator=( const WrongCat &other );
