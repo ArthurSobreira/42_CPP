@@ -1,5 +1,5 @@
 #include "Defines.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 namespace Tests {
 	void	repeatChar( char c, int n, std::string color ) {
@@ -10,43 +10,43 @@ namespace Tests {
 	}
 
 	void	testDefaultConstructor( void ) {
-		ScavTrap scav1;
+		FragTrap frag1;
 		
-		scav1.attack("Target1");
-		scav1.takeDamage(5);
-		scav1.beRepaired(3);
-		scav1.guardGate();
+		frag1.attack("Target1");
+		frag1.takeDamage(5);
+		frag1.beRepaired(3);
+		frag1.highFivesGuys();
 	}
 
 	void	testNameConstructor( void ) {
-		ScavTrap scav2("Scavvy");
+		FragTrap frag2("Fraggy");
 		
-		scav2.attack("Target2");
-		scav2.takeDamage(8);
-		scav2.setEnergyPoints(0);
-		scav2.beRepaired(4);
-		scav2.guardGate();
+		frag2.attack("Target2");
+		frag2.takeDamage(8);
+		frag2.setEnergyPoints(0);
+		frag2.beRepaired(4);
+		frag2.highFivesGuys();
 	}
 
 	void	testCopyConstructor( void ) {
-		ScavTrap scav3("Scavvy");
-		ScavTrap scav4(scav3);
+		FragTrap frag3("Fraggy");
+		FragTrap frag4(frag3);
 		
-		scav4.attack("Target3");
-		scav4.takeDamage(10);
-		scav4.beRepaired(5);
-		scav4.guardGate();
+		frag4.attack("Target3");
+		frag4.takeDamage(10);
+		frag4.beRepaired(5);
+		frag4.highFivesGuys();
 	}
 
 	void	testCopyAssignmentOperator( void ) {
-		ScavTrap scav5("Scavvy");
-		ScavTrap scav6("Scavtrap");
+		FragTrap frag5("Fraggy");
+		FragTrap frag6("Fragtrap");
 		
-		scav6 = scav5;
-		scav6.attack("Target4");
-		scav6.takeDamage(15);
-		scav6.beRepaired(6);
-		scav6.guardGate();
+		frag6 = frag5;
+		frag6.attack("Target4");
+		frag6.takeDamage(15);
+		frag6.beRepaired(6);
+		frag6.highFivesGuys();
 	}
 }
 
@@ -70,5 +70,6 @@ int main( void ) {
 	std::cout << "     Testing Copy Assignment Operator" << std::endl;
 	Tests::repeatChar('=', 42, CYAN);
 	Tests::testCopyAssignmentOperator();
+	
 	return (0);
 }
