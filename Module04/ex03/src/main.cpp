@@ -4,7 +4,7 @@
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
 
-int main()
+int main( void )
 {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
