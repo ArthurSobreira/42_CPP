@@ -4,37 +4,37 @@
 #include "Fixed.hpp"
 
 /* Comparison Operators */
-bool	Fixed::operator>(Fixed const &other) const {
+bool	Fixed::operator>( Fixed const &other ) const {
 	return (this->getRawBits() > other.getRawBits());
 }
 
-bool	Fixed::operator<(Fixed const &other) const {
+bool	Fixed::operator<( Fixed const &other ) const {
 	return (this->getRawBits() < other.getRawBits());
 }
 
-bool	Fixed::operator>=(Fixed const &other) const {
+bool	Fixed::operator>=( Fixed const &other ) const {
 	return (this->getRawBits() >= other.getRawBits());
 }
 
-bool	Fixed::operator<=(Fixed const &other) const {
+bool	Fixed::operator<=( Fixed const &other ) const {
 	return (this->getRawBits() <= other.getRawBits());
 }
 
-bool	Fixed::operator==(Fixed const &other) const {
+bool	Fixed::operator==( Fixed const &other ) const {
 	return (this->getRawBits() == other.getRawBits());
 }
 
-bool	Fixed::operator!=(Fixed const &other) const {
+bool	Fixed::operator!=( Fixed const &other ) const {
 	return (this->getRawBits() != other.getRawBits());
 }
 
 
 /* Arithmetic Operators */
-Fixed	Fixed::operator+(Fixed const &other) const {
+Fixed	Fixed::operator+( Fixed const &other ) const {
 	return (Fixed(this->toFloat() + other.toFloat()));
 }
 
-Fixed	Fixed::operator-(Fixed const &other) const {
+Fixed	Fixed::operator-( Fixed const &other ) const {
 	return (Fixed(this->toFloat() - other.toFloat()));
 }
 
