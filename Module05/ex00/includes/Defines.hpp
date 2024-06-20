@@ -40,18 +40,4 @@
 # define UNDER_CYAN "\033[4;36m"
 # define UNDER_WHITE "\033[4;37m"
 
-/* Messages Defines */
-# define ANIMAL_SOUND_MESSAGE(name) \
-"Animal " << COLORIZE(YELLOW, name) << " makes an animal sound!"
-# define CAT_SOUND_MESSAGE(name) \
-"Cat " << COLORIZE(YELLOW, name) << " makes a cat sound " \
-<< COLORIZE(CYAN, "(Meow Meow)") << "!"
-# define DOG_SOUND_MESSAGE(name) \
-"Dog " << COLORIZE(YELLOW, name) << " makes a dog sound " \
-<< COLORIZE(CYAN, "(Woof Woof)") << "!"
-# define WRONGANIMAL_SOUND_MESSAGE(name) \
-"WrongAnimal " << COLORIZE(YELLOW, name) << " makes a wrong animal sound!"
-# define WRONGCAT_SOUND_MESSAGE(name) \
-"WrongCat " << COLORIZE(YELLOW, name) << " makes a wrong cat sound " \
-
 #endif
