@@ -58,9 +58,9 @@ void	Bureaucrat::decrementGrade( void ) {
 
 /* Exception Classes */
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-	return ("Grade is too high!");
+	return ("Grade is too high! Only 1-150 allowed.");
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-	return ("Grade is too low!");
+	return ("Grade is too low! Only 1-150 allowed.");
 }
