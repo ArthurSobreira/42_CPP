@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name(name) {
 	} else if (grade > 150) {
 		throw GradeTooLowException();
 	} else {
-		_grade = grade;
+		this->_grade = grade;
 	}
 }
 
