@@ -64,3 +64,10 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Grade is too low! Only 1-150 allowed.");
 }
+
+/* Output Operator Overload */
+std::ostream &operator<<( std::ostream &out, Bureaucrat const &value ) {
+	out << COLORIZE(CYAN, value.getName()) << ", bureaucrat grade " << \
+	COLORIZE(YELLOW, value.getGrade());
+	return (out);
+}
