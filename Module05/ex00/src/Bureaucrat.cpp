@@ -2,7 +2,7 @@
 #include "Bureaucrat.hpp"
 
 /* Constructor Methods */
-Bureaucrat::Bureaucrat( void ) : _name("Default"), _grade(10) {}
+Bureaucrat::Bureaucrat( void ) : _name("DefaultBureaucrat"), _grade(10) {}
 
 Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name(name) {
 	if (grade < 1) {
