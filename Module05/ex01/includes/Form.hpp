@@ -14,6 +14,7 @@ class Form {
 	public:
 		/* Constructor Method */
 		Form( void );
+		Form( std::string name, int gradeToSign, int gradeToExecute);
 		
 		/* Copy Constructor Method */
 		Form( const Form &other );
@@ -31,6 +32,16 @@ class Form {
 		bool	getSigned( void ) const;
 		void	beSigned( const Bureaucrat &bureaucrat );
 
+		/* Exception Classes */
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 std::ostream &operator<<( std::ostream &out, Form const &value );

@@ -1,8 +1,9 @@
 #include "Defines.hpp"
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 /* Constructor Methods */
-Bureaucrat::Bureaucrat( void ) : _name("Default"), _grade(10) {}
+Bureaucrat::Bureaucrat( void ) : _name("DefaultBureaucrat"), _grade(10) {}
 
 Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name(name) {
 	if (grade < 1) {
@@ -53,6 +54,17 @@ void	Bureaucrat::decrementGrade( void ) {
 		throw GradeTooLowException();
 	} else {
 		this->_grade++;
+	}
+}
+
+void	Bureaucrat::signForm( Form &form ) {
+	if (this->getGrade() <= form.getGradeToSign()) {
+		form.beSigned(*this);
+		std::cout << COLORIZE(GREEN, this->getName()) << " signs " << \
+		COLORIZE(GREEN, form.getName()) << std::endl;
+	} else {
+		std::cout << COLORIZE(RED, this->getName()) << " cannot sign " << \
+		COLORIZE(RED, form.getName()) << " because " << COLORIZE(RED, "grade is too low") << std::endl;
 	}
 }
 
