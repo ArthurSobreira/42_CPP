@@ -19,10 +19,10 @@ class AForm {
 		AForm( std::string name, int gradeToSign, int gradeToExecute);
 		
 		/* Copy Constructor Method */
-		AForm( const Form &other );
+		AForm( const AForm &other );
 		
 		/* Copy Assignment Operator Overload */
-		AForm &operator=( const Form &other );
+		AForm &operator=( const AForm &other );
 		
 		/* Destructor Method */
 		virtual ~AForm( void );
