@@ -16,7 +16,9 @@ RM		=	rm -rf
 
 NAME	=	AForm
 BUILD	=	./build
-SRCS	=	src/Bureaucrat.cpp src/Form.cpp src/main.cpp
+SRCS	=	src/AForm.cpp src/Bureaucrat.cpp src/main.cpp \
+			src/PresidentialPardonForm.cpp src/RobotomyRequestForm.cpp \
+			src/ShrubberyCreationForm.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
