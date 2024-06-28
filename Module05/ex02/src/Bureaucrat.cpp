@@ -1,6 +1,6 @@
 #include "Defines.hpp"
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 /* Constructor Methods */
 Bureaucrat::Bureaucrat( void ) : _name("DefaultBureaucrat"), _grade(10) {}
@@ -57,13 +57,24 @@ void	Bureaucrat::decrementGrade( void ) {
 	}
 }
 
-void	Bureaucrat::signForm( Form &form ) {
+void	Bureaucrat::signForm( AForm &form ) {
 	try {
 		form.beSigned(*this);
 		std::cout << COLORIZE(GREEN, this->getName()) << " signed " << \
 		COLORIZE(GREEN, form.getName()) << std::endl;
 	} catch (const std::exception &e) {
 		std::cout << COLORIZE(RED, this->getName()) << " couldn't sign " << \
+		COLORIZE(RED, form.getName()) << " because " << COLORIZE(RED, e.what()) << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm( class AForm const &form ) {
+	try {
+		form.execute(*this);
+		std::cout << COLORIZE(GREEN, this->getName()) << " executed " << \
+		COLORIZE(GREEN, form.getName()) << std::endl;
+	} catch (const std::exception &e) {
+		std::cout << COLORIZE(RED, this->getName()) << " couldn't execute " << \
 		COLORIZE(RED, form.getName()) << " because " << COLORIZE(RED, e.what()) << std::endl;
 	}
 }
