@@ -33,11 +33,11 @@ Bureaucrat::~Bureaucrat( void ) {};
 
 /* Public Methods */
 std::string	Bureaucrat::getName( void ) const {
-	return this->_name;
+	return (this->_name);
 }
 
 int	Bureaucrat::getGrade( void ) const {
-	return this->_grade;
+	return (this->_grade);
 }
 
 void	Bureaucrat::incrementGrade( void ) {
