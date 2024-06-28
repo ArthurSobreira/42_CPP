@@ -44,6 +44,7 @@ class Form {
 		};
 };
 
+/* Output Operator Overload */
 std::ostream &operator<<( std::ostream &out, Form const &value );
 
 #endif
