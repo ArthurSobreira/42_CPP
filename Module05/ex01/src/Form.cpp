@@ -1,6 +1,6 @@
 #include "Defines.hpp"
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /* Constructor Method */
 Form::Form( void ) : _name("DefaultForm"), _gradeToSign(10), _gradeToExecute(10), _signed(false) {}
