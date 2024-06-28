@@ -7,9 +7,9 @@ Bureaucrat::Bureaucrat( void ) : _name("DefaultBureaucrat"), _grade(10) {}
 
 Bureaucrat::Bureaucrat( const std::string name, int grade ) : _name(name) {
 	if (grade < 1) {
-		throw GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	} else if (grade > 150) {
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	} else {
 		this->_grade = grade;
 	}
@@ -43,7 +43,7 @@ int	Bureaucrat::getGrade( void ) const {
 
 void	Bureaucrat::incrementGrade( void ) {
 	if (this->getGrade() - 1 < 1) {
-		throw GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	} else {
 		this->_grade--;
 	}
@@ -51,7 +51,7 @@ void	Bureaucrat::incrementGrade( void ) {
 
 void	Bureaucrat::decrementGrade( void ) {
 	if (this->getGrade() + 1 > 150) {
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 	} else {
 		this->_grade++;
 	}
