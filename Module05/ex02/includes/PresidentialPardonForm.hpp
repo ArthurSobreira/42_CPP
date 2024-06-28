@@ -10,7 +10,8 @@ class PresidentialPardonForm : public AForm {
 	public:
 		/* Constructor Method */
 		PresidentialPardonForm( void );
-		
+		PresidentialPardonForm( std::string const target );
+
 		/* Copy Constructor Method */
 		PresidentialPardonForm( const PresidentialPardonForm &other );
 		
