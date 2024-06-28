@@ -43,6 +43,7 @@ class Bureaucrat {
 		};
 };
 
+/* Output Operator Overload */
 std::ostream &operator<<( std::ostream &out, Bureaucrat const &value );
 
 #endif
