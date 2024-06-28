@@ -1,27 +1,27 @@
 #include "Defines.hpp"
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 /* Constructor Method */
-Form::Form( void ) : _name("DefaultForm"), _gradeToSign(10), _gradeToExecute(10), _signed(false) {}
+AForm::AForm( void ) : _name("DefaultAForm"), _gradeToSign(10), _gradeToExecute(10), _signed(false) {}
 
-Form::Form( std::string name, int gradeToSign, int gradeToExecute ) : _name(name), _gradeToSign(gradeToSign), \
+AForm::AForm( std::string name, int gradeToSign, int gradeToExecute ) : _name(name), _gradeToSign(gradeToSign), \
 	_gradeToExecute(gradeToExecute), _signed(false) {
 	if (gradeToSign < 1 || gradeToExecute < 1) {
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	} else if (gradeToSign > 150 || gradeToExecute > 150) {
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	} 
 }
 
 /* Copy Constructor Method */
-Form::Form( const Form &other ) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), \
+AForm::AForm( const AForm &other ) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), \
 	_gradeToExecute(other.getGradeToExecute()), _signed(other.getSigned()){
 	*this = other;
 }
 
 /* Copy Assignment Operator Overload */
-Form &Form::operator=( const Form &other ) {
+AForm &AForm::operator=( const AForm &other ) {
 	if ( this != &other ) {
 		const_cast<std::string &>(this->_name) = other.getName();
 		const_cast<int &>(this->_gradeToSign) = other.getGradeToSign();
@@ -32,44 +32,44 @@ Form &Form::operator=( const Form &other ) {
 }
 
 /* Destructor Method */
-Form::~Form( void ) {};
+AForm::~AForm( void ) {};
 
  /* Public Methods */
-std::string Form::getName( void ) const {
+std::string AForm::getName( void ) const {
 	return (this->_name);
 }
 
-int Form::getGradeToSign( void ) const {
+int AForm::getGradeToSign( void ) const {
 	return (this->_gradeToSign);
 }
 
-int	Form::getGradeToExecute( void ) const {
+int	AForm::getGradeToExecute( void ) const {
 	return (this->_gradeToExecute);
 }
 
-bool	Form::getSigned( void ) const {
+bool	AForm::getSigned( void ) const {
 	return (this->_signed);
 }
 
-void	Form::beSigned( const Bureaucrat &bureaucrat ) {
+void	AForm::beSigned( const Bureaucrat &bureaucrat ) {
 	if (bureaucrat.getGrade() > this->getGradeToSign()) {
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	} else {
 		this->_signed = true;
 	}
 }
 
 /* Exception Classes */
-const char *Form::GradeTooHighException::what() const throw() {
+const char *AForm::GradeTooHighException::what() const throw() {
 	return ("Form Grade is too high! Only 1-150 allowed.");
 }
 
-const char *Form::GradeTooLowException::what() const throw() {
+const char *AForm::GradeTooLowException::what() const throw() {
 	return ("Form Grade is too low! Only 1-150 allowed.");
 }
 
 /* Output Operator Overload */
-std::ostream &operator<<( std::ostream &out, Form const &value ) {
+std::ostream &operator<<( std::ostream &out, AForm const &value ) {
     out << "Form Name: " <<  COLORIZE(CYAN, value.getName()) << \
     " | Grade to Sign: " <<  COLORIZE(YELLOW, value.getGradeToSign()) << \
     " | Grade to Execute: " << COLORIZE(YELLOW, value.getGradeToExecute()) << \
