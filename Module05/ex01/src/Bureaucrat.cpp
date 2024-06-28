@@ -60,10 +60,10 @@ void	Bureaucrat::decrementGrade( void ) {
 void	Bureaucrat::signForm( Form &form ) {
 	try {
 		form.beSigned(*this);
-		std::cout << COLORIZE(GREEN, this->getName()) << " signs " << \
+		std::cout << COLORIZE(GREEN, this->getName()) << " signed " << \
 		COLORIZE(GREEN, form.getName()) << std::endl;
 	} catch (const std::exception &e) {
-		std::cout << COLORIZE(RED, this->getName()) << " cannot sign " << \
+		std::cout << COLORIZE(RED, this->getName()) << " couldn't sign " << \
 		COLORIZE(RED, form.getName()) << " because " << COLORIZE(RED, e.what()) << std::endl;
 	}
 }
