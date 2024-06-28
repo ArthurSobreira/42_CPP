@@ -1,6 +1,6 @@
 #include "Defines.hpp"
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /* Constructor Methods */
 Bureaucrat::Bureaucrat( void ) : _name("DefaultBureaucrat"), _grade(10) {}
