@@ -62,6 +62,7 @@ int main( void ) {
 	Tests::repeatChar('=', 42, CYAN);
 	Tests::testValidBureaucrat();
 
+	std::cout << std::endl;
 	Tests::repeatChar('=', 42, CYAN);
 	std::cout << "         Invalid Bureaucrat Tests " << std::endl;
 	Tests::repeatChar('=', 42, CYAN);
