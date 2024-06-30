@@ -68,6 +68,10 @@ const char *AForm::GradeTooLowException::what() const throw() {
 	return ("Form Grade is too low! Only 1-150 allowed.");
 }
 
+const char *AForm::FormNotSignedException::what() const throw() {
+	return ("Form is not signed!");
+}
+
 /* Output Operator Overload */
 std::ostream &operator<<( std::ostream &out, AForm const &value ) {
     out << "Form Name: " <<  COLORIZE(CYAN, value.getName()) << \
