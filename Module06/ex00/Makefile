@@ -16,9 +16,7 @@ RM		=	rm -rf
 
 NAME	=	ScalarConverter
 BUILD	=	./build
-SRCS	=	src/AForm.cpp src/Bureaucrat.cpp src/main.cpp \
-			src/PresidentialPardonForm.cpp src/RobotomyRequestForm.cpp \
-			src/ShrubberyCreationForm.cpp
+SRCS	=	src/main.cpp src/ScalarConverter.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
