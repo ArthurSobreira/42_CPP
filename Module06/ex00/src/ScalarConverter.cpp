@@ -10,9 +10,7 @@ ScalarConverter::ScalarConverter( const ScalarConverter &other ) {
 
 /* Copy Assignment Operator Overload */
 ScalarConverter &ScalarConverter::operator=( const ScalarConverter &other ) {
-	if ( this != &other ) {
-		this->attribute = other.getAttribute();
-	}
+	(void)other;
 	return (*this);
 }
 
@@ -20,10 +18,6 @@ ScalarConverter &ScalarConverter::operator=( const ScalarConverter &other ) {
 ScalarConverter::~ScalarConverter( void ) {}
 
  /* Public Methods */
-int ScalarConverter::getAttribute( void ) const {
-	return (this->attribute);
-}
-
-void ScalarConverter::setAttribute( int value ) {
-	this->attribute = value;
+void	ScalarConverter::convert( std::string const &value ) {
+	std::cout << "Value: " << value << std::endl;
 }
