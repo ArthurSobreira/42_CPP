@@ -40,4 +40,17 @@
 # define UNDER_CYAN "\033[4;36m"
 # define UNDER_WHITE "\033[4;37m"
 
+/* ASCII Define */
+#define ASCII_TREE \
+"       _-_\n" \
+"    /~~   ~~\\\n" \
+" /~~         ~~\\\n" \
+"{               }\n" \
+" \\  _-     -_  /\n" \
+"   ~  \\\\ //  ~\n" \
+"_- -   | | _- _\n" \
+"  _ -  | |   -_\n" \
+"      // \\\\\n" \
+"     //   \\\\"
+
 #endif
