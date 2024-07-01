@@ -5,9 +5,6 @@
 
 class ScalarConverter {
 	private:
-		int attribute;
-		
-	public:
 		/* Constructor Method */
 		ScalarConverter( void );
 		
@@ -20,10 +17,8 @@ class ScalarConverter {
 		/* Destructor Method */
 		~ScalarConverter( void );
 		
-		/* Public Methods */
-		int    getAttribute( void ) const;
-		void   setAttribute( int value );
-		
+	public:
+		static void	convert( std::string const &value );
 };
 
 #endif
