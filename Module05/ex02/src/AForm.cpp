@@ -34,7 +34,7 @@ AForm &AForm::operator=( const AForm &other ) {
 /* Destructor Method */
 AForm::~AForm( void ) {};
 
- /* Public Methods */
+/* Public Methods */
 std::string AForm::getName( void ) const {
 	return (this->_name);
 }
