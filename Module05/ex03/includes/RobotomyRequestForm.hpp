@@ -2,6 +2,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include <iostream>
 
 class RobotomyRequestForm : public AForm {
 	private:
