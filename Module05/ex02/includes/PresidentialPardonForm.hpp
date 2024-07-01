@@ -2,6 +2,7 @@
 #define PRESIDENTIALPARDONFORM_HPP
 
 #include "AForm.hpp"
+#include <iostream>
 
 class PresidentialPardonForm : public AForm {
 	private:
