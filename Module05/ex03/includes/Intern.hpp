@@ -3,6 +3,7 @@
 
 #include "AForm.hpp"
 #include <iostream>
+#include <stdexcept>
 
 class Intern {
 	public:
@@ -20,6 +21,12 @@ class Intern {
 		
 		/* Public Methods */
 		AForm	*makeForm( std::string formName, std::string target );
+
+		/* Exception Class */
+		class FormNotFoundException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #endif
