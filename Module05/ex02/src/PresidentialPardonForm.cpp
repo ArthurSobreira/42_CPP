@@ -26,7 +26,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=( const PresidentialPar
 /* Destructor Method */
 PresidentialPardonForm::~PresidentialPardonForm( void ) {}
 
- /* Public Methods */
+/* Public Methods */
 std::string PresidentialPardonForm::getTarget( void ) const {
 	return (this->_target);
 }
