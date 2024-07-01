@@ -52,5 +52,6 @@ AForm	*Intern::makeForm( std::string formName, std::string target ) {
 
 /* Exception Class */
 const char *Intern::FormNotFoundException::what() const throw() {
-	return ("Invalid Form Name!");
+	return ("Invalid Form Name! Only 'Robotomy Request', 'Presidential Pardon', \n\
+	and 'Shrubbery Creation' are valid Form Names.");
 }
