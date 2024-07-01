@@ -22,30 +22,40 @@ Intern &Intern::operator=( const Intern &other ) {
 Intern::~Intern( void ) {}
 
 /* Public Methods */
+namespace FormUtils {
+	AForm	*createRobotomyRequestForm( std::string target ) {
+		return (new RobotomyRequestForm(target));
+	}
+
+	AForm	*createPresidentialPardonForm( std::string target ) {
+		return (new PresidentialPardonForm(target));
+	}
+
+	AForm	*createShrubberyCreationForm( std::string target ) {
+		return (new ShrubberyCreationForm(target));
+	}
+}
+
 AForm	*Intern::makeForm( std::string formName, std::string target ) {
 	std::string	formNames[3] = {"Robotomy Request", 
 		"Presidential Pardon", "Shrubbery Creation"};
 
+	AForm	*(*formFunctions[3])(std::string) = {
+		FormUtils::createRobotomyRequestForm, 
+		FormUtils::createPresidentialPardonForm, 
+		FormUtils::createShrubberyCreationForm
+	};
+
 	short int i;
 	for (i = 0; i < 3; i++) {
-		if (formName == formNames[i]) break;
+		if (formName == formNames[i]) {
+			std::cout << "Intern creates " << COLORIZE(YELLOW, formName) \
+			<< " Form." << std::endl;
+			return (formFunctions[i](target));
+		}
 	}
-
-	switch (i) {
-		case 0:
-			std::cout << "Intern creates " << COLORIZE(YELLOW, formName) \
-			<< " Form." << std::endl;
-			return (new RobotomyRequestForm(target));
-		case 1:
-			std::cout << "Intern creates " << COLORIZE(YELLOW, formName) \
-			<< " Form." << std::endl;
-			return (new PresidentialPardonForm(target));
-		case 2:
-			std::cout << "Intern creates " << COLORIZE(YELLOW, formName) \
-			<< " Form." << std::endl;
-			return (new ShrubberyCreationForm(target));
-		default:
-			throw Intern::FormNotFoundException();
+	if (i == 3) {
+		throw Intern::FormNotFoundException();
 	}
 	return (NULL);
 }
