@@ -80,7 +80,7 @@ namespace Tests {
 		}
 		try {
 			RobotomyRequestForm rrf3("Target2");
-			Bureaucrat b1("Bureaucrat1", 5);
+			Bureaucrat b1("Bureaucrat1", 45);
 			rrf3.beSigned(b1);
 			b1.executeForm(rrf3);
 			std::cout << rrf3 << std::endl;
