@@ -3,6 +3,7 @@
 #include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 namespace Tests {
 	void	repeatChar( char c, int n, std::string color ) {
@@ -117,31 +118,96 @@ namespace Tests {
 			std::cout << COLORIZE(RED, e.what()) << std::endl;
 		}
 	}
+
+	void	testValidShrubberyCreationForm( void ) {
+		try {
+			ShrubberyCreationForm scf1;
+			std::cout << scf1 << std::endl;
+		} catch (const std::exception &e) {
+			std::cout << COLORIZE(RED, e.what()) << std::endl;
+		}
+		try {
+			ShrubberyCreationForm scf2("Target1");
+			std::cout << scf2 << std::endl;
+		} catch (const std::exception &e) {
+			std::cout << COLORIZE(RED, e.what()) << std::endl;
+		}
+		try {
+			ShrubberyCreationForm scf3("Target2");
+			Bureaucrat b1("Bureaucrat1", 130);
+			scf3.beSigned(b1);
+			b1.executeForm(scf3);
+			std::cout << scf3 << std::endl;
+		} catch (const std::exception &e) {
+			std::cout << COLORIZE(RED, e.what()) << std::endl;
+		}
+	}
+
+	void	testInvalidShrubberyCreationForm( void ) {
+		try {
+			ShrubberyCreationForm scf1("Target1");
+			Bureaucrat b1("Bureaucrat1", 140);
+			scf1.beSigned(b1);
+			b1.executeForm(scf1);
+			std::cout << scf1 << std::endl;
+		} catch (const std::exception &e) {
+			std::cout << COLORIZE(RED, e.what()) << std::endl;
+		}
+		try {
+			ShrubberyCreationForm scf2("Target1");
+			Bureaucrat b2("Bureaucrat1", 150);
+			scf2.beSigned(b2);
+			b2.executeForm(scf2);
+			std::cout << scf2 << std::endl;
+		} catch (const std::exception &e) {
+			std::cout << COLORIZE(RED, e.what()) << std::endl;
+		}
+		try {
+			ShrubberyCreationForm scf3("Target1");
+			Bureaucrat b3("Bureaucrat1", 130);
+			b3.executeForm(scf3);
+			std::cout << scf3 << std::endl;
+		} catch (const std::exception &e) {
+			std::cout << COLORIZE(RED, e.what()) << std::endl;
+		}
+	}
 }
 
 int main( void ) {
-	Tests::repeatChar('=', 42, CYAN);
+	Tests::repeatChar('=', 43, CYAN);
 	std::cout << "      Valid Presidential Pardon Form " << std::endl;
-	Tests::repeatChar('=', 42, CYAN);
+	Tests::repeatChar('=', 43, CYAN);
 	Tests::testValidPresidentialPardonForm();
 
 	std::cout << std::endl;
-	Tests::repeatChar('=', 42, CYAN);
+	Tests::repeatChar('=', 43, CYAN);
 	std::cout << "     Invalid Presidential Pardon Form " << std::endl;
-	Tests::repeatChar('=', 42, CYAN);
+	Tests::repeatChar('=', 43, CYAN);
 	Tests::testInvalidPresidentialPardonForm();
 
 	std::cout << std::endl;
-	Tests::repeatChar('=', 42, CYAN);
+	Tests::repeatChar('=', 43, CYAN);
 	std::cout << "        Valid Robotomy Request Form " << std::endl;
-	Tests::repeatChar('=', 42, CYAN);
+	Tests::repeatChar('=', 43, CYAN);
 	Tests::testValidRobotomyRequestForm();
 
 	std::cout << std::endl;
-	Tests::repeatChar('=', 42, CYAN);
+	Tests::repeatChar('=', 43, CYAN);
 	std::cout << "       Invalid Robotomy Request Form " << std::endl;
-	Tests::repeatChar('=', 42, CYAN);
+	Tests::repeatChar('=', 43, CYAN);
 	Tests::testInvalidRobotomyRequestForm();
+
+	std::cout << std::endl;
+	Tests::repeatChar('=', 43, CYAN);
+	std::cout << "       Valid Shrubbery Creation Form " << std::endl;
+	Tests::repeatChar('=', 43, CYAN);
+	Tests::testValidShrubberyCreationForm();
+
+	std::cout << std::endl;
+	Tests::repeatChar('=', 43, CYAN);
+	std::cout << "      Invalid Shrubbery Creation Form " << std::endl;
+	Tests::repeatChar('=', 43, CYAN);
+	Tests::testInvalidShrubberyCreationForm();
 
 	return (0);
 }
