@@ -1,11 +1,14 @@
 #include "Defines.hpp"
 #include "ScalarConverter.hpp"
 
-int main( void ) {
-	ScalarConverter sc;
+int main( int argc, char *argv[] ) {
+	if (argc != 2) {
+		std::cerr << COLORIZE(RED, " Usage: ") \
+		<< argv[0] << " <value>" << std::endl;
+		return (1);
+	}
 
-	sc.setAttribute(42);
-	std::cout << "Attribute: " << sc.getAttribute() << std::endl;
+	ScalarConverter::convert(argv[1]);
 
 	return (0);
 }
