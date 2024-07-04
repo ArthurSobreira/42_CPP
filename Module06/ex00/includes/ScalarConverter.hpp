@@ -16,9 +16,20 @@ class ScalarConverter {
 		
 		/* Destructor Method */
 		~ScalarConverter( void );
-		
+
 	public:
 		static void	convert( std::string const &value );
+
+		/* Exception Classes */
+		class NonDisplayableException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class ImpossibleException : public std::exception {
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #endif
