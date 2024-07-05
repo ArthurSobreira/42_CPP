@@ -10,5 +10,9 @@ int main( int argc, char *argv[] ) {
 
 	ScalarConverter::convert(std::string(argv[1]));
 
+	/* ScalarConverter converter;  // This will cause a compile error
+
+	converter.convert(std::string(argv[1])); */
+
 	return (0);
 }
