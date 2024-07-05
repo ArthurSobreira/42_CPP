@@ -50,6 +50,5 @@ clean:
 fclean: clean
 	@echo $(RED)[Cleaning $(NAME) executable...]$(LIMITER)
 	@$(RM) $(NAME)
-	@$(RM) *_shrubbery
 
 re: fclean all
