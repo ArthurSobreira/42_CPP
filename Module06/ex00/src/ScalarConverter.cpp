@@ -2,7 +2,6 @@
 #include "ScalarConverter.hpp"
 #include <iostream>
 #include <cstdlib>
-#include <string>
 #include <limits>
 #include <cmath>
 
@@ -32,6 +31,16 @@ namespace ConversionFunctions {
 			return (true);
 		}
 		return (false);
+	}
+
+	bool	isnumber( std::string const &value ) {
+		for (size_t i = 0; i < value.size(); ++i) {
+			if (!std::isdigit(value[i]) && value[i] != '.' && value[i] != 'f' && \
+				value[i] != '+' && value[i] != '-') {
+				return (false);
+			}
+		}
+		return (true);
 	}
 
 	std::string	handleDecimal( std::string const &value, bool isFloat ) {
@@ -66,7 +75,8 @@ namespace ConversionFunctions {
 	}
 
 	char	toChar( std::string const &value ) {
-		if (ConversionFunctions::isPseudoLiteral(value)) {
+		if (ConversionFunctions::isPseudoLiteral(value) || \
+			!ConversionFunctions::isnumber(value)) {
 			throw ScalarConverter::ImpossibleException();
 		}
 
@@ -82,7 +92,8 @@ namespace ConversionFunctions {
 	}
 
 	int		toInt( std::string const &value ) {
-		if (ConversionFunctions::isPseudoLiteral(value)) {
+		if (ConversionFunctions::isPseudoLiteral(value) || \
+			!ConversionFunctions::isnumber(value)) {
 			throw ScalarConverter::ImpossibleException();
 		}
 
@@ -96,6 +107,11 @@ namespace ConversionFunctions {
 	}
 
 	float	toFloat( std::string const &value ) {
+		if (!ConversionFunctions::isPseudoLiteral(value) && \
+			!ConversionFunctions::isnumber(value)) {
+			throw ScalarConverter::ImpossibleException();
+		}
+		
 		if (value == "nanf") {
 			return std::numeric_limits<float>::quiet_NaN();
 		}
@@ -111,6 +127,11 @@ namespace ConversionFunctions {
 	}
 
 	float	toDouble( std::string const &value ) {
+		if (!ConversionFunctions::isPseudoLiteral(value) && \
+			!ConversionFunctions::isnumber(value)) {
+			throw ScalarConverter::ImpossibleException();
+		}
+
 		if (value == "nan" || value == "nanf") {
 			return std::numeric_limits<double>::quiet_NaN();
 		}
