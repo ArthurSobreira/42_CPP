@@ -8,6 +8,7 @@ class Data {
 	public:
 		/* Constructor Method */
 		Data( void );
+		Data( int attribute );
 		
 		/* Copy Constructor Method */
 		Data( const Data &other );
