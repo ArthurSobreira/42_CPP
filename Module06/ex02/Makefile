@@ -16,7 +16,7 @@ RM		=	rm -rf
 
 NAME	=	Base
 BUILD	=	./build
-SRCS	=	src/A.cpp src/B.cpp src/Base.cpp src/C.cpp src/main.cpp
+SRCS	=	src/Base.cpp src/main.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
