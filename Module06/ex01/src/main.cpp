@@ -10,7 +10,7 @@ namespace Tests {
 	}
 
 	void	testSerializeDataValue( void ) {
-		Data		*data = new Data(4242);
+		Data		*data = new Data(42);
 		uintptr_t	raw = Serializer::serialize(data);
 		Data		*data_copy = Serializer::deserialize(raw);
 
@@ -23,7 +23,7 @@ namespace Tests {
 	}
 
 	void	testSerializeDataAddress( void ) {
-		Data		*data = new Data(4242);
+		Data		*data = new Data;
 		uintptr_t	raw = Serializer::serialize(data);
 		Data		*data_copy = Serializer::deserialize(raw);
 
