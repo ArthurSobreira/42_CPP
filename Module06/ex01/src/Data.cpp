@@ -3,6 +3,8 @@
 /* Constructor Method */
 Data::Data( void ) : _attribute(10) {};
 
+Data::Data( int attribute ) : _attribute(attribute) {};
+
 /* Copy Constructor Method */
 Data::Data( const Data &other ) {
 	*this = other;
