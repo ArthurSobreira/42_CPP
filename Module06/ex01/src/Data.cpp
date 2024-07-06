@@ -11,7 +11,7 @@ Data::Data( const Data &other ) {
 /* Copy Assignment Operator Overload */
 Data &Data::operator=( const Data &other ) {
 	if ( this != &other ) {
-		this->attribute = other.getAttribute();
+		this->_attribute = other.getAttribute();
 	}
 	return (*this);
 }
@@ -21,5 +21,5 @@ Data::~Data( void ) {}
 
  /* Public Methods */
 int Data::getAttribute( void ) const {
-	return (this->attribute);
+	return (this->_attribute);
 }
