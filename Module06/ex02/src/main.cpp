@@ -23,14 +23,16 @@ namespace Tests {
 
 			delete base;
 		}
+		/* Test with NULL pointer */
+		identify(NULL);
 	}
 
 }
 
 int main( void ) {
-	Tests::repeatChar('=', 41, CYAN);
+	Tests::repeatChar('=', 55, CYAN);
 	std::cout << "     Test Identify Base from Pointer and Reference " << std::endl;
-	Tests::repeatChar('=', 41, CYAN);
+	Tests::repeatChar('=', 55, CYAN);
 	Tests::testIdentifyFromPointerAndReference();
 
 	return (0);
