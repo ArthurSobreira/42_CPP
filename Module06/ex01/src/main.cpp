@@ -10,9 +10,9 @@ namespace Tests {
 	}
 
 	void	testSerializeDataValue( void ) {
-		Data	*data = new Data(4242);
-		uintptr_t raw = Serializer::serialize(data);
-		Data	*data_copy = Serializer::deserialize(raw);
+		Data		*data = new Data(4242);
+		uintptr_t	raw = Serializer::serialize(data);
+		Data		*data_copy = Serializer::deserialize(raw);
 
 		std::cout << COLORIZE(YELLOW, "Data Value:      ") << 
 		data->getAttribute() << std::endl;
@@ -23,9 +23,9 @@ namespace Tests {
 	}
 
 	void	testSerializeDataAddress( void ) {
-		Data	*data = new Data(4242);
-		uintptr_t raw = Serializer::serialize(data);
-		Data	*data_copy = Serializer::deserialize(raw);
+		Data		*data = new Data(4242);
+		uintptr_t	raw = Serializer::serialize(data);
+		Data		*data_copy = Serializer::deserialize(raw);
 
 		std::cout << COLORIZE(YELLOW, "Data Address:      ") << 
 		data << std::endl;
