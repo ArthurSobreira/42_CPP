@@ -4,7 +4,7 @@
 class Base {
 	public:
 		/* Destructor Method */
-		~Base( void );
+		virtual	~Base( void );
 };
 
 /* Base Functions */
