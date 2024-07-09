@@ -23,7 +23,7 @@ template <typename T> class Array {
 		~Array( void );
 		
 		/* Public Methods */
-		unsigned int	size( void ) const;
+		uint	size( void ) const;
 		T &operator[]( uint index );
 };
 
