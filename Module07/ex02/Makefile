@@ -16,7 +16,7 @@ RM		=	rm -rf
 
 NAME	=	Array
 BUILD	=	./build
-SRCS	=	src/Array.cpp src/main.cpp
+SRCS	=	src/main.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
