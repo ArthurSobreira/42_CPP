@@ -19,23 +19,23 @@ template <typename T> class Array {
 		/* Copy Constructor Method */
 		Array( const Array &other );
 		
-		/* Copy Assignment Operator Overload */
-		Array &operator=( const Array &other );
-		
 		/* Destructor Method */
 		~Array( void );
+
+		/* Operator Overloading */
+		Array &operator=( const Array &other );
+		T &operator[]( uint index ) const ;
 		
 		/* Public Methods */
 		uint	size( void ) const;
-		T &operator[]( uint index );
 
 		/* Exception Classes */
-		class OutOfLimitsException : public std::exception {
+		class EmptyArrayException : public std::exception {
 			public:
 				virtual const char *what() const throw();
 		};
 
-		class EmptyArrayException : public std::exception {
+		class OutOfLimitsException : public std::exception {
 			public:
 				virtual const char *what() const throw();
 		};
