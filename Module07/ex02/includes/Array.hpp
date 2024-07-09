@@ -14,7 +14,7 @@ template <typename T> class Array {
 	public:
 		/* Constructor Methods */
 		Array( void );
-		Array( uint n )
+		Array( uint n );
 		
 		/* Copy Constructor Method */
 		Array( const Array &other );
