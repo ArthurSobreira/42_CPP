@@ -15,7 +15,7 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I includes/
 RM		=	rm -rf
 
 NAME	=	Template
-NAME_S	=	Complex
+NAME_S	=	Template_S
 BUILD	=	./build
 SRCS	=	src/main.cpp
 SRCS_S	=	src/ex00.cpp
@@ -45,7 +45,7 @@ $(BUILD)/%.o: src/%.cpp $(INC)
 $(BUILD):
 	@mkdir -p $(BUILD)
 
-complex: $(BUILD)
+test: $(BUILD)
 	@echo $(CYAN)[$(NAME_S) executable created successfully...]$(LIMITER)
 	@$(CC) $(CFLAGS) $(SRCS_S) -o $(NAME_S)
 
