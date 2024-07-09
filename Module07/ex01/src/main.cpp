@@ -2,14 +2,7 @@
 #include "iter.hpp"
 #include <string>
 
-namespace Tests {
-	void	repeatChar( char c, int n, std::string color ) {
-		for (int i = 0; i < n; i++) {
-			std::cout << color << c;
-		}
-		std::cout << RESET << std::endl;
-	}
-
+namespace Utils {
 	void	invertCase( std::string const &str ) {
 		std::string &copy = const_cast<std::string &>(str);
 		for (size_t i = 0; i < copy.length(); i++) {
@@ -30,6 +23,15 @@ namespace Tests {
 		}
 		std::cout << std::endl;
 	}
+}
+
+namespace Tests {
+	void	repeatChar( char c, int n, std::string color ) {
+		for (int i = 0; i < n; i++) {
+			std::cout << color << c;
+		}
+		std::cout << RESET << std::endl;
+	}
 
 	void	testStringArray( void ) {
 		std::string strings[] = {
@@ -39,14 +41,14 @@ namespace Tests {
 			"Cpp",
 			"Module07"
 		};
-		iter( strings, 5, invertCase );
-		iter( strings, 5, print );
+		iter(strings, 5, Utils::invertCase);
+		iter(strings, 5, print);
 	}
 
 	void	testIntArray( void ) {
 		int ints[] = { 1, 2, 3, 4, 5 };
 
-		iter( ints, 5, isEven );
+		iter(ints, 5, Utils::isEven);
 	}
 }
 
