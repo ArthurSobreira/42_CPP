@@ -4,7 +4,7 @@
 
 DEFAULT_GOAL: all
 .DELETE_ON_ERROR: $(NAME)
-.PHONY: all bonus clean fclean re
+.PHONY: all bonus clean fclean re test
 
 #------------------------------------------------------------------------------#
 #                                VARIABLES                                     #
