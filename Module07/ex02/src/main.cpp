@@ -58,13 +58,13 @@ namespace Tests {
 		Array<std::string> array2;
 
 		try {
-			array1[2] = 42;
+			array2[0] = "Hello";
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
 
 		try {
-			array2[0] = "Hello";
+			array1[10] = 42;
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
