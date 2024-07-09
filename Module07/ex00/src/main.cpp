@@ -71,24 +71,24 @@ namespace Tests {
 }
 
 int	main( void ) {
-	Tests::repeatChar('=', 33, CYAN);
+	Tests::repeatChar('=', 33, BOLD_CYAN);
 	std::cout << "          Subject Tests " << std::endl;
-	Tests::repeatChar('=', 33, CYAN);
+	Tests::repeatChar('=', 33, BOLD_CYAN);
 	Tests::subjectTests();
 
-	Tests::repeatChar('=', 33, CYAN);
+	Tests::repeatChar('=', 33, BOLD_CYAN);
 	std::cout << "      Template String Tests " << std::endl;
-	Tests::repeatChar('=', 33, CYAN);
+	Tests::repeatChar('=', 33, BOLD_CYAN);
 	Tests::stringTests();
 
-	Tests::repeatChar('=', 33, CYAN);
+	Tests::repeatChar('=', 33, BOLD_CYAN);
 	std::cout << "      Template Float Tests " << std::endl;
-	Tests::repeatChar('=', 33, CYAN);
+	Tests::repeatChar('=', 33, BOLD_CYAN);
 	Tests::floatTests();
 
-	Tests::repeatChar('=', 33, CYAN);
+	Tests::repeatChar('=', 33, BOLD_CYAN);
 	std::cout << "          Invalid Tests " << std::endl;
-	Tests::repeatChar('=', 33, CYAN);
+	Tests::repeatChar('=', 33, BOLD_CYAN);
 	Tests::InvalidTests();
 
 	return (0);
