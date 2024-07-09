@@ -13,10 +13,10 @@ namespace Tests {
 	void	invertCase( std::string const &str ) {
 		std::string &copy = const_cast<std::string &>(str);
 		for (size_t i = 0; i < copy.length(); i++) {
-			if (copy[i] >= 'A' && copy[i] <= 'Z') {
-				copy[i] += 32;
-			} else if (copy[i] >= 'a' && copy[i] <= 'z') {
-				copy[i] -= 32;
+			if (std::isupper(copy[i])) {
+				copy[i] = std::tolower(copy[i]);
+			} else if (std::islower(copy[i])) {
+				copy[i] = std::toupper(copy[i]);
 			}
 		}
 	}
