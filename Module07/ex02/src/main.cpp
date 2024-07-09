@@ -37,7 +37,7 @@ namespace Tests {
 	}
 
 	void	testValidArray( void ) {
-		Array<int> array1(5);
+		Array<int> array1(7);
 
 		std::cout << COLORIZE( BLUE, "Array1 size: " ) << 
 		array1.size() << std::endl;
