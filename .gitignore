@@ -89,4 +89,6 @@ dkms.conf
 */*/Serializer
 */*/Base
 */*/Template
-*/*/Complex
+*/*/Template_S
+*/*/Iter
+*/*/Iter_S
