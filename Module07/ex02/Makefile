@@ -19,6 +19,7 @@ BUILD	=	./build
 SRCS	=	src/main.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
+TMPLT	=	$(wildcard src/*.tpp)
 
 GREEN	=	"\033[32;1m"
 RED		=	"\033[31;1m"
@@ -36,7 +37,7 @@ $(NAME): $(OBJS)
 	@echo $(CYAN)[$(NAME) executable created successfully...]$(LIMITER)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
 
-$(BUILD)/%.o: src/%.cpp $(INC)
+$(BUILD)/%.o: src/%.cpp $(INC) $(TMPLT)
 	@echo $(GREEN)[Compiling]$(LIMITER) $(WHITE_U)$(notdir $(<))...$(LIMITER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
