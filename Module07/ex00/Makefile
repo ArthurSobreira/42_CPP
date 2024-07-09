@@ -15,8 +15,10 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I includes/
 RM		=	rm -rf
 
 NAME	=	Template
+NAME_S	=	Complex
 BUILD	=	./build
 SRCS	=	src/main.cpp
+SRCS_S	=	src/ex00.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
 INC		=	$(wildcard includes/*.hpp)
 
@@ -43,12 +45,18 @@ $(BUILD)/%.o: src/%.cpp $(INC)
 $(BUILD):
 	@mkdir -p $(BUILD)
 
+complex: $(BUILD)
+	@echo $(CYAN)[$(NAME_S) executable created successfully...]$(LIMITER)
+	@$(CC) $(CFLAGS) $(SRCS_S) -o $(NAME_S)
+
 clean:
 	@echo $(RED)[Cleaning object files...]$(LIMITER)
 	@$(RM) $(BUILD)
 
 fclean: clean
 	@echo $(RED)[Cleaning $(NAME) executable...]$(LIMITER)
+	@echo $(RED)[Cleaning $(NAME_S) executable...]$(LIMITER)
 	@$(RM) $(NAME)
+	@$(RM) $(NAME_S)
 
 re: fclean all
