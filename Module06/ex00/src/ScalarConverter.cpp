@@ -159,26 +159,23 @@ void	ScalarConverter::convert( std::string const &value ) {
 	try {
 		const int iValue = ConversionFunctions::toInt(value);
 
-		std::cout << COLORIZE(BOLD_BLUE, "int: '") << iValue << 
-		COLORIZE(BOLD_BLUE, "'") << std::endl;
+		std::cout << COLORIZE(BOLD_BLUE, "int: ") << iValue << std::endl;
 	} catch (const std::exception &e) {
 		std::cout << COLORIZE(BOLD_BLUE, "int: ") << e.what() << std::endl;
 	}
 	try {
 		const float	fValue = ConversionFunctions::toFloat(value);
 
-		std::cout << COLORIZE(BOLD_BLUE, "float: '") << fValue <<
-		ConversionFunctions::handleDecimal(value, true) << 
-		COLORIZE(BOLD_BLUE, "'") << std::endl;
+		std::cout << COLORIZE(BOLD_BLUE, "float: ") << fValue <<
+		ConversionFunctions::handleDecimal(value, true) << std::endl;
 	} catch (const std::exception &e) {
 		std::cout << COLORIZE(BOLD_BLUE, "float: ") << e.what() << std::endl;
 	}
 	try {
 		const double dValue = ConversionFunctions::toDouble(value);
 
-		std::cout << COLORIZE(BOLD_BLUE, "double: '") << dValue << 
-		ConversionFunctions::handleDecimal(value, false) <<
-		COLORIZE(BOLD_BLUE, "'") << std::endl;
+		std::cout << COLORIZE(BOLD_BLUE, "double: ") << dValue << 
+		ConversionFunctions::handleDecimal(value, false) << std::endl;
 	} catch (const std::exception &e) {
 		std::cout << COLORIZE(BOLD_BLUE, "double: ") << e.what() << std::endl;
 	}
