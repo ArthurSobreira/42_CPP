@@ -70,10 +70,10 @@ uint Array<T>::size( void ) const {
 /* Exception Classes */
 template <typename T>
 const char *Array<T>::EmptyArrayException::what() const throw() {
-	return (RED "Array is empty" RESET);
+	return (RED "Array is empty." RESET);
 }
 
 template <typename T>
 const char *Array<T>::OutOfLimitsException::what() const throw() {
-	return (RED "Index out of limits" RESET);
+	return (RED "Index out of limits." RESET);
 }
