@@ -38,7 +38,7 @@ namespace Tests {
 			"Hello", "World", "42", "Cpp", "Module07"
 		};
 		iter(strings, 5, Utils::invertCase);
-		iter(strings, 5, print);
+		iter(strings, 5, print<std::string>);
 	}
 
 	void	testIntArray( void ) {
