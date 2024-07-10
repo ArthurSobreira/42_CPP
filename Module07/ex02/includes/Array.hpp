@@ -18,15 +18,15 @@ template <typename T> class Array {
 		
 		/* Copy Constructor Method */
 		Array( const Array &other );
-		
-		/* Destructor Method */
-		~Array( void );
 
 		/* Operator Overloading */
 		Array &operator=( const Array &other );
 		T &operator[]( uint index ) const ;
-		
-		/* Public Methods */
+
+		/* Destructor Method */
+		~Array( void );
+
+		/* Public Method */
 		uint	size( void ) const;
 
 		/* Exception Classes */
