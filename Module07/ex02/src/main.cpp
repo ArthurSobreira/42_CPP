@@ -53,17 +53,17 @@ namespace Tests {
 	}
 
 	void	testInvalidArray( void ) {
-		Array<int> array1(2);
-		Array<std::string> array2;
+		Array<std::string> array1;
+		Array<int> array2(2);
 
 		try {
-			array2[0] = "Hello";
+			array1[0] = "Hello";
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
 
 		try {
-			array1[10] = 42;
+			array2[10] = 42;
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
