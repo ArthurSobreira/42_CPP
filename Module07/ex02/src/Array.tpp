@@ -16,7 +16,6 @@ Array<T>::Array( uint n ) : _array(NULL), _size(n) {
 	}
 }
 
-
 /* Copy Constructor Method */
 template <typename T> 
 Array<T>::Array( const Array &other ) : _array(NULL), _size(0) {
