@@ -4,7 +4,7 @@
 
 DEFAULT_GOAL: all
 .DELETE_ON_ERROR: $(NAME)
-.PHONY: all bonus clean fclean re test
+.PHONY: all bonus clean fclean re eval
 
 #------------------------------------------------------------------------------#
 #                                VARIABLES                                     #
@@ -15,7 +15,7 @@ CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I includes/
 RM		=	rm -rf
 
 NAME	=	Template
-NAME_S	=	Template_S
+NAME_S	=	TemplateEval
 BUILD	=	./build
 SRCS	=	src/main.cpp
 SRCS_S	=	src/ex00.cpp
@@ -45,7 +45,7 @@ $(BUILD)/%.o: src/%.cpp $(INC)
 $(BUILD):
 	@mkdir -p $(BUILD)
 
-test: $(BUILD)
+eval: $(BUILD)
 	@echo $(CYAN)[$(NAME_S) executable created successfully...]$(LIMITER)
 	@$(CC) $(CFLAGS) $(SRCS_S) -o $(NAME_S)
 
