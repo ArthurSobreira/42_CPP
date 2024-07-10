@@ -77,3 +77,4 @@ template <typename T>
 const char *Array<T>::OutOfLimitsException::what() const throw() {
 	return (RED "Index out of limits." RESET);
 }
+
