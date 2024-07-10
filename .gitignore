@@ -89,7 +89,7 @@ dkms.conf
 */*/Serializer
 */*/Base
 */*/Template
-*/*/Template_S
+*/*/TemplateEval
 */*/Iter
-*/*/Iter_S
+*/*/IterEval
 */*/Array
