@@ -35,11 +35,7 @@ namespace Tests {
 
 	void	testStringArray( void ) {
 		std::string strings[] = {
-			"Hello",
-			"World",
-			"42",
-			"Cpp",
-			"Module07"
+			"Hello", "World", "42", "Cpp", "Module07"
 		};
 		iter(strings, 5, Utils::invertCase);
 		iter(strings, 5, print);
@@ -53,14 +49,14 @@ namespace Tests {
 }
 
 int		main( void ) {
-	Tests::repeatChar( '=', 36, BOLD_CYAN );
+	Tests::repeatChar('=', 36, BOLD_CYAN);
 	std::cout << "         String Array Tests " << std::endl;
-	Tests::repeatChar( '=', 36, BOLD_CYAN );
+	Tests::repeatChar('=', 36, BOLD_CYAN);
 	Tests::testStringArray();
 
-	Tests::repeatChar( '=', 36, BOLD_CYAN );
+	Tests::repeatChar('=', 36, BOLD_CYAN);
 	std::cout << "         Integer Array Tests " << std::endl;
-	Tests::repeatChar( '=', 36, BOLD_CYAN );
+	Tests::repeatChar('=', 36, BOLD_CYAN);
 	Tests::testIntArray();
 	
 	return (0);
