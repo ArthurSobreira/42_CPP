@@ -22,14 +22,6 @@ Array<T>::Array( const Array &other ) : _array(NULL), _size(0) {
 	*this = other;
 }
 
-/* Destructor Method */
-template <typename T> 
-Array<T>::~Array( void ) {
-	if (this->_array != NULL) {
-		delete[] this->_array;
-	}
-}
-
 /* Operator Overloading */
 template <typename T> 
 Array<T> &Array<T>::operator=( const Array &other ) {
@@ -61,7 +53,15 @@ T &Array<T>::operator[]( uint index ) const {
 	return (this->_array[index]);
 }
 
-/* Public Methods */
+/* Destructor Method */
+template <typename T> 
+Array<T>::~Array( void ) {
+	if (this->_array != NULL) {
+		delete[] this->_array;
+	}
+}
+
+/* Public Method */
 template <typename T> 
 uint Array<T>::size( void ) const {
 	return (this->_size);
@@ -77,4 +77,3 @@ template <typename T>
 const char *Array<T>::OutOfLimitsException::what() const throw() {
 	return (RED "Index out of limits." RESET);
 }
-
