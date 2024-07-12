@@ -27,10 +27,10 @@ template <typename T>
 Array<T> &Array<T>::operator=( const Array &other ) {
 	if (this != &other) {
 		this->_size = other._size;
-		if (this->_array != NULL) {
+		if (this->_array) {
 			delete[] this->_array;
 		}
-		if (other._array != NULL) {
+		if (other._array) {
 			this->_array = new T[this->_size];
 			for (uint i = 0; i < this->_size; i++) {
 				this->_array[i] = other._array[i];
