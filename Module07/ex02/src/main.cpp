@@ -39,14 +39,14 @@ namespace Tests {
 	void	testValidArray( void ) {
 		Array<int> array1(7);
 
-		std::cout << COLORIZE( BLUE, "Array1 size: " ) << 
+		std::cout << COLORIZE(BLUE, "Array1 size: ") << 
 		array1.size() << std::endl;
 		Utils::fillIntArray(array1);
 		Utils::printArray(array1);
 
 		Array<std::string> array2(5);
 
-		std::cout << COLORIZE( BLUE, "Array2 size: " ) <<
+		std::cout << COLORIZE(BLUE, "Array2 size: ") <<
 		array2.size() << std::endl;
 		Utils::fillStringArray(array2);
 		Utils::printArray(array2);
@@ -71,14 +71,14 @@ namespace Tests {
 }
 
 int main( void ){
-	Tests::repeatChar( '=', 36, BOLD_CYAN );
+	Tests::repeatChar('=', 36, BOLD_CYAN);
 	std::cout << "         Valid Array Tests " << std::endl;
-	Tests::repeatChar( '=', 36, BOLD_CYAN );
+	Tests::repeatChar('=', 36, BOLD_CYAN);
 	Tests::testValidArray();
 
-	Tests::repeatChar( '=', 36, BOLD_CYAN );
+	Tests::repeatChar('=', 36, BOLD_CYAN);
 	std::cout << "        Invalid Array Tests " << std::endl;
-	Tests::repeatChar( '=', 36, BOLD_CYAN );
+	Tests::repeatChar('=', 36, BOLD_CYAN);
 	Tests::testInvalidArray();
 
 	return (0);
