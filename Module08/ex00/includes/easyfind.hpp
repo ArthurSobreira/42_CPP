@@ -12,7 +12,7 @@ T::iterator	easyfind( T const &container, int const value );
 class ValueNotFoundException : public std::exception {
 	public:
 		virtual const char *what() const throw() {
-			return (RED "Value Not Found" RESET);
+			return (RED "Value Not Found in Container" RESET);
 		}
 };
 
