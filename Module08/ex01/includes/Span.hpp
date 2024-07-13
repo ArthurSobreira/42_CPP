@@ -31,8 +31,8 @@ class Span {
 		void	addNumber( int number );
 		int		shortestSpan( void );
 		int		longestSpan( void );
-		template <typename Iterator> 
-		void	populate( Iterator begin, Iterator end );
+		void	populate( std::vector<int>::iterator begin, 
+			std::vector<int>::iterator end );
 
 		/* Exception Classes */
 		class LimitReachedException : public std::exception {
