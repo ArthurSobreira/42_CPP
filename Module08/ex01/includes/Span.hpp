@@ -11,7 +11,7 @@ typedef unsigned int	uint;
 class Span {
 	private:
 		std::vector<int>	_list;
-		const uint	_size;
+		uint	_size;
 		
 	public:
 		/* Constructor Methods */
