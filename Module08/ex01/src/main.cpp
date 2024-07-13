@@ -2,12 +2,20 @@
 #include "Span.hpp"
 #include <cstdlib>
 #include <ctime>
+#include <set>
 
 namespace Utils {
 	void	fillVector( std::vector<int> &vec, int n, int range) {
 		std::srand(std::time(NULL));
-		for (int i = 0; i < n; i++) {
-			vec.push_back(std::rand() % range);
+		std::set<int> set;
+
+		while (set.size() < static_cast<uint>(n)) {
+			int number = std::rand() % range;
+
+			if (set.find(number) == set.end()) {
+				set.insert(number);
+				vec.push_back(number);
+			}
 		}
 	}
 
@@ -71,7 +79,7 @@ namespace Tests {
 		Span sp = Span(10000);
 		std::vector<int> vec;
 
-		Utils::fillVector(vec, 10000, 100000);
+		Utils::fillVector(vec, 10000, 10000);
 		sp.populate(vec.begin(), vec.end());
 		Utils::printVector(vec, false);
 
