@@ -1,5 +1,6 @@
 #include "easyfind.hpp"
 
+/* Template easyfind Function */
 template <typename T>
 typename T::iterator	easyfind( T &container, int value ) {
 	typename T::iterator	occ;
