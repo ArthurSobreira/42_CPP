@@ -1,3 +1,4 @@
+#include "Defines.hpp"
 #include "Span.hpp"
 
 /* Constructor Method */
@@ -26,6 +27,7 @@ Span::~Span( void ) {}
 void	Span::addNumber( int number ) {
 	if (this->_list.size() >= this->_size)
 		throw Span::LimitReachedException();
+
 	this->_list.push_back(number);
 }
 
@@ -34,7 +36,7 @@ int	Span::shortestSpan( void ) {
 		throw Span::NotEnoughNumbersException();
 
 	std::sort(this->_list.begin(), this->_list.end());
-	
+
 	int shortest = this->_list[1] - this->_list[0];
 	int current;
 	int previous;
@@ -70,9 +72,9 @@ void	Span::populate( std::vector<int>::iterator begin,
 
 /* Exception Classes */
 const char *Span::LimitReachedException::what( void ) const throw() {
-	return ("Container Limit Reached");
+	return (RED "Container Limit Reached" RESET);
 }
 
 const char *Span::NotEnoughNumbersException::what( void ) const throw() {
-	return ("Container Has Less Than 2 Numbers");
+	return (RED "Container Has Less Than 2 Numbers" RESET);
 }
