@@ -23,7 +23,7 @@ MutantStack<T> &MutantStack<T>::operator=( const MutantStack &other ) {
 template <typename T>
 MutantStack<T>::~MutantStack( void ) {}
 
-/* Public Methods */
+/* Iterator Methods */
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin( void ) {
 	return (this->c.begin());
