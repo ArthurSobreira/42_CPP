@@ -25,7 +25,7 @@ class MutantStack : public std::stack<T> {
 		/* Destructor Method */
 		~MutantStack( void );
 		
-		/* Public Methods */
+		/* Iterator Methods */
 		iterator begin( void );
 		iterator end( void );
 		const_iterator begin( void ) const;
