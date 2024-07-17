@@ -14,7 +14,7 @@ CC		=	c++
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I includes/
 RM		=	rm -rf
 
-NAME	=	BitcoinExchange
+NAME	=	btc
 BUILD	=	./build
 SRCS	=	src/BitcoinExchange.cpp src/main.cpp
 OBJS	=	$(addprefix $(BUILD)/, $(notdir $(SRCS:.cpp=.o)))
