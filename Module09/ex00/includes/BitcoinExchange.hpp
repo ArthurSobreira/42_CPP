@@ -32,6 +32,7 @@ class BitcoinExchange {
 		/* Public Methods */
 		std::map<std::string, double>	getDatabase( void ) const;
 		std::string						getFilename( void ) const;
+		void						exchangeRate( void ) const;
 
 		/* Exception Classes */
 		class InvalidFileException : public std::exception {
