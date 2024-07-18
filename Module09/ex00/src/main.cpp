@@ -9,7 +9,5 @@ int main( int argc, char *argv[] ) {
 	std::string	filename(argv[1]);
 
 	BitcoinExchange	btc(filename);
-	std::cout << std::setprecision(15) << 
-	btc.getDatabase()["2022-03-29"] << std::endl;
 	return (0);
 }
