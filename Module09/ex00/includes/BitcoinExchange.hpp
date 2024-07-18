@@ -2,11 +2,12 @@
 #define BITCOINEXCHANGE_HPP
 
 #include <algorithm>
+#include <stdexcept>
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
-#include <stdexcept>
+#include <iomanip>
 #include <map>
 
 class BitcoinExchange {
