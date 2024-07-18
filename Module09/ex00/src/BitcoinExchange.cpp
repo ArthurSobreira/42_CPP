@@ -30,14 +30,14 @@ namespace BTCUtils {
 	}
 
 	void	parseDatabase( std::map<std::string, double> &database ) {
-		std::ifstream	dataFile("data.csv");
+		std::ifstream	DBFIle("./data.csv");
 
-		if (!dataFile.is_open() || dataFile.fail()) {
-			throw BitcoinExchange::InvalidFileException();
+		if (!DBFIle.is_open() || DBFIle.fail()) {
+			throw InvalidFileException();
 		}
 		
 		std::string	line;
-		while (std::getline(dataFile, line)) {
+		while (std::getline(DBFIle, line)) {
 			std::istringstream	ss(line);
 			std::string			date, value;
 
@@ -45,13 +45,32 @@ namespace BTCUtils {
 				if (BTCUtils::dateValid(date)) {
 					database[date] = std::strtod(value.c_str(), NULL);
 				} else if (date != "date" && value != "exchange_rate") {
-					throw BitcoinExchange::InvalidDateException();
+					throw InvalidDateException();
 				}
 			} else {
-				throw BitcoinExchange::ParseErrorException();
+				throw ParseErrorException();
 			}
 		}
-		dataFile.close();
+		DBFIle.close();
+	}
+
+	bool	valueValid( std::string value, errorType &error ) {
+		char	*endptr;
+		long	intValue = std::strtol(value.c_str(), &endptr, 10);
+
+		if (intValue > INT_MAX) {
+			error = TOO_LARGE_VALUE;
+			return (false);
+		}
+		if (intValue < 0) {
+			error = NEGATIVE_VALUE;
+			return (false);
+		}
+		return (true);
+	}
+
+	void	removeSpaces( std::string &str ) {
+		str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
 	}
 }
 
@@ -62,7 +81,7 @@ BitcoinExchange::BitcoinExchange( std::string filename ) : _filename(filename) {
 	try {
 		BTCUtils::parseDatabase(this->_database);
 	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 }
 /* Copy Constructor Method */
@@ -83,23 +102,77 @@ BitcoinExchange &BitcoinExchange::operator=( const BitcoinExchange &other ) {
 BitcoinExchange::~BitcoinExchange( void ) {};
 
 /* Public Methods */
-std::map<std::string, double> BitcoinExchange::getDatabase( void ) const {
+Database	BitcoinExchange::getDatabase( void ) const {
 	return (this->_database);
 }
 
-std::string BitcoinExchange::getFilename( void ) const {
+std::string	BitcoinExchange::getFilename( void ) const {
 	return (this->_filename);
 }
 
+void BitcoinExchange::printExchange( std::string date, std::string value ) const {
+	errorType	error;
+	
+	if (!BTCUtils::dateValid(date)) {
+		throw InvalidDateException();
+	}
+	if (!BTCUtils::valueValid(value, error)) {
+		throw InvalidValueException(error);
+	}
+	std::cout << date << " => " << value << std::endl;
+}
+
+void BitcoinExchange::exchangeRate( void ) const {
+	std::ifstream	inputFile(this->getFilename().c_str());
+
+	if (!inputFile.is_open() || inputFile.fail()) {
+		throw InvalidFileException();
+	}
+
+	std::string	line;
+	while (std::getline(inputFile, line)) {
+		try {
+			BTCUtils::removeSpaces(line);
+
+			if (!line.empty() && line[line.size() - 2] == '|') {
+				throw InvalidValueException(GENERIC_ERROR);
+			}
+
+			std::istringstream	ss(line);
+			std::string			date, value;
+
+			if (std::getline(ss, date, '|') && std::getline(ss, value)) {
+				if (date != "date" && value != "value")
+					this->printExchange(date, value);
+			} else {
+				throw InvalidValueException(GENERIC_ERROR);
+			}
+		} catch (std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
+}
+
 /* Exception Classes */
-const char *BitcoinExchange::InvalidFileException::what( void ) const throw() {
+const char *InvalidFileException::what( void ) const throw() {
 	return (RED "Error: File Could Not Be Opened." RESET);
 }
 
-const char *BitcoinExchange::ParseErrorException::what( void ) const throw() {
+const char *ParseErrorException::what( void ) const throw() {
 	return (RED "Error: File Could Not Be Parsed." RESET);
 }
 
-const char *BitcoinExchange::InvalidDateException::what( void ) const throw() {
+const char *InvalidDateException::what( void ) const throw() {
 	return (RED "Error: Invalid Date Format." RESET);
+}
+
+const char *InvalidValueException::what( void ) const throw() {
+	switch (this->_error) {
+		case NEGATIVE_VALUE:
+			return (RED "Error: not a positive value." RESET);
+		case TOO_LARGE_VALUE:
+			return (RED "Error: value too large." RESET);
+		default:
+			return (RED "Error: bad value format." RESET);
+	}
 }
