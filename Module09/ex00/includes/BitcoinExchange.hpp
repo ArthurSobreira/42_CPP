@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <fstream>
 #include <stdexcept>
 #include <map>
 
@@ -27,7 +28,23 @@ class BitcoinExchange {
 		
 		/* Public Methods */
 		std::map<std::string, double>	getDatabase( void ) const;
-		std::string						getFilename( void ) const;		
+		std::string						getFilename( void ) const;
+
+		/* Exception Classes */
+		class InvalidFileException : public std::exception {
+			public:
+				virtual const char *what( void ) const throw();
+		};
+
+		class ParseErrorException : public std::exception {
+			public:
+				virtual const char *what( void ) const throw();
+		};
+
+		class InvalidDateException : public std::exception {
+			public:
+				virtual const char *what( void ) const throw();
+		};
 };
 
 #endif
