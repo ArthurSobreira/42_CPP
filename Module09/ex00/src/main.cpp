@@ -6,7 +6,8 @@ int main( int argc, char *argv[] ) {
 		std::cout << COLORIZE(RED, "Usage: ./bitcoin [filename]") << std::endl;
 		return (1);
 	}
-	(void)argv;
-	BitcoinExchange	btc;
+	std::string	filename(argv[1]);
+
+	BitcoinExchange	btc(filename);
 	return (0);
 }
