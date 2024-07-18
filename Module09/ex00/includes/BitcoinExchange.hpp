@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+#include <climits>
 #include <iomanip>
 #include <map>
 
@@ -33,6 +34,7 @@ class BitcoinExchange {
 		std::map<std::string, double>	getDatabase( void ) const;
 		std::string						getFilename( void ) const;
 		void						exchangeRate( void ) const;
+		void						printExchange( void ) const;
 
 		/* Exception Classes */
 		class InvalidFileException : public std::exception {
@@ -46,6 +48,11 @@ class BitcoinExchange {
 		};
 
 		class InvalidDateException : public std::exception {
+			public:
+				virtual const char *what( void ) const throw();
+		};
+
+		class InvalidValueException : public std::exception {
 			public:
 				virtual const char *what( void ) const throw();
 		};
