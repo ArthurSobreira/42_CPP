@@ -118,7 +118,17 @@ void BitcoinExchange::printExchange( std::string date, std::string value ) const
 	if (!BTCUtils::valueValid(value, error)) {
 		throw InvalidValueException(error);
 	}
-	std::cout << date << " => " << value << std::endl;
+
+	double			doubleValue = std::strtod(value.c_str(), NULL);
+	Database		database = this->getDatabase();
+	Database::iterator	it = database.find(date);
+	std::string		lastDate;
+	// double			lastValue;
+
+	if (it != database.end()) {
+		std::cout << date << " => " << value << " = " << 
+		doubleValue * it->second << std::endl;
+	}
 }
 
 void BitcoinExchange::exchangeRate( void ) const {
