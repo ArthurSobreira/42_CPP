@@ -55,14 +55,13 @@ namespace BTCUtils {
 	}
 
 	bool	valueValid( std::string value, errorType &error ) {
-		char	*endptr;
-		long	intValue = std::strtol(value.c_str(), &endptr, 10);
+		double	doubleValue = std::strtod(value.c_str(), NULL);
 
-		if (intValue > INT_MAX) {
+		if (doubleValue > 1000.0) {
 			error = TOO_LARGE_VALUE;
 			return (false);
 		}
-		if (intValue < 0) {
+		if (doubleValue < 0) {
 			error = NEGATIVE_VALUE;
 			return (false);
 		}
