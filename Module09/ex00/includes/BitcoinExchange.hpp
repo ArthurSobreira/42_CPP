@@ -8,7 +8,6 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
-#include <climits>
 #include <iomanip>
 #include <map>
 
@@ -26,7 +25,7 @@ class BitcoinExchange {
 		std::string	_filename;
 		
 	public:
-		/* Constructor Method */
+		/* Constructor Methods */
 		BitcoinExchange( void );
 		BitcoinExchange( std::string filename );
 		
