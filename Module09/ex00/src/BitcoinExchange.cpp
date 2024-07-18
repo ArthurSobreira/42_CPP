@@ -1,9 +1,10 @@
 #include "Defines.hpp"
 #include "BitcoinExchange.hpp"
 
+/* Utils Namespace */
 namespace BTCUtils {
 	bool	isLeapYear( int year ) {
-		(year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+		return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 	}
 
 	bool	dateValid( std::string date ) {
@@ -11,14 +12,13 @@ namespace BTCUtils {
 			return (false);
 		}
 
-		int	year = std::stoi(date.substr(0, 4));
-		int	month = std::stoi(date.substr(5, 2));
-		int	day = std::stoi(date.substr(8, 2));
+		int	year = std::atoi(date.substr(0, 4).c_str());
+		int	month = std::atoi(date.substr(5, 2).c_str());
+		int	day = std::atoi(date.substr(8, 2).c_str());
 		int daysInMonth[] = {
-			31, 0, 31, 30, 31, 30, 
-			31, 31, 30, 31, 30, 31
+			31, (isLeapYear(year) ? 29 : 28), 31, 
+			30, 31, 30, 31, 31, 30, 31, 30, 31
 		};
-		daysInMonth[1] = isLeapYear(year) ? 29 : 28;
 
 		if (year < 0 || year > 9999 || month < 1 || month > 12) {
 			return (false);
@@ -28,33 +28,42 @@ namespace BTCUtils {
 		}
 		return (true);
 	}
+
+	void	parseDatabase( std::map<std::string, double> &database ) {
+		std::ifstream	dataFile("data.csv");
+
+		if (!dataFile.is_open() || dataFile.fail()) {
+			throw BitcoinExchange::InvalidFileException();
+		}
+		
+		std::string	line;
+		while (std::getline(dataFile, line)) {
+			std::istringstream	ss(line);
+			std::string			date, value;
+
+			if (std::getline(ss, date, ',') && std::getline(ss, value)) {
+				if (BTCUtils::dateValid(date)) {
+					database[date] = std::strtod(value.c_str(), NULL);
+				} else if (date != "date" && value != "exchange_rate") {
+					throw BitcoinExchange::InvalidDateException();
+				}
+			} else {
+				throw BitcoinExchange::ParseErrorException();
+			}
+		}
+		dataFile.close();
+	}
 }
 
 /* Constructor Method */
 BitcoinExchange::BitcoinExchange( void ) { throw InvalidFileException(); }
 
 BitcoinExchange::BitcoinExchange( std::string filename ) : _filename(filename) {
-	std::ifstream	dataFile("data.csv");
-
-	if (!dataFile.is_open() || dataFile.fail()) {
-		throw InvalidFileException();
+	try {
+		BTCUtils::parseDatabase(this->_database);
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
 	}
-	
-	std::string	line;
-	while (std::getline(dataFile, line)) {
-		std::istringstream	ss(line);
-		std::string			date;
-		double				value;
-
-		if (std::getline(ss, date, ',') && std::getline(ss, value)) {
-			if (dateValid(date)) {
-				this->getDatabase()[date] = std::stod(value);
-			}
-		} else {
-			throw ParseErrorException();
-		}
-	}
-	dataFile.close();
 }
 /* Copy Constructor Method */
 BitcoinExchange::BitcoinExchange( const BitcoinExchange &other ) {
