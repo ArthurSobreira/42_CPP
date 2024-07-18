@@ -8,9 +8,10 @@ int main( int argc, char *argv[] ) {
 	}
 
 	std::string	filename(argv[1]);
-	BitcoinExchange	btc(filename);
-
+	
 	try {
+		BitcoinExchange	btc(filename);
+		
 		btc.exchangeRate();
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
