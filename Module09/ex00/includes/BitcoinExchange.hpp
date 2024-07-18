@@ -50,23 +50,17 @@ class BitcoinExchange {
 /* Exception Classes */
 class InvalidFileException : public std::exception {
 	public:
-		virtual const char *what( void ) const throw() {
-			return (RED "Error: File Could Not Be Opened." RESET);
-		}
+		virtual const char *what( void ) const throw();
 };
 
 class ParseErrorException : public std::exception {
 	public:
-		virtual const char *what( void ) const throw() {
-			return (RED "Error: File Could Not Be Parsed." RESET);
-		}
+		virtual const char *what( void ) const throw();
 };
 
 class InvalidDateException : public std::exception {
 	public:
-		virtual const char *what( void ) const throw() {
-			return (RED "Error: Invalid Date Format." RESET);
-		}
+		virtual const char *what( void ) const throw();
 };
 
 class InvalidValueException : public std::exception {
@@ -76,18 +70,7 @@ class InvalidValueException : public std::exception {
 	public:
 		InvalidValueException( errorType error ) : _error(error) {};
 
-		virtual const char *what( void ) const throw() {
-			switch (_error) {
-				case GENERIC_ERROR:
-					return (RED "Error: Invalid Value Format." RESET);
-				case NEGATIVE_VALUE:
-					return (RED "Error: Negative Value." RESET);
-				case TOO_LARGE_VALUE:
-					return (RED "Error: Value Too Large." RESET);
-				default:
-					return (RED "Error: Invalid Value Format." RESET);
-			}
-		}
+		virtual const char *what( void ) const throw();
 };
 
 #endif
