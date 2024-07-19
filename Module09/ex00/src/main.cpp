@@ -13,7 +13,7 @@ int main( int argc, char *argv[] ) {
 		BitcoinExchange	btc(filename);
 		
 		btc.exchangeRate();
-	} catch (std::exception &e) {
+	} catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
 		return (1);
 	}
