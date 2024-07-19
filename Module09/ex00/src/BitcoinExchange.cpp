@@ -144,7 +144,8 @@ void BitcoinExchange::exchangeRate( void ) const {
 		try {
 			BTCUtils::removeSpaces(line);
 
-			if (!line.empty() && line[line.size() - 2] == '|') {
+			if (!line.empty() && !inputFile.eof() && \
+				line[line.size() - 2] == '|') {
 				throw InvalidValueException(GENERIC_ERROR);
 			}
 
