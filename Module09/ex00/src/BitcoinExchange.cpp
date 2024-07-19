@@ -79,7 +79,7 @@ BitcoinExchange::BitcoinExchange( void ) { throw InvalidFileException(); }
 BitcoinExchange::BitcoinExchange( std::string filename ) : _filename(filename) {
 	try {
 		BTCUtils::parseDatabase(this->_database);
-	} catch (std::exception &e) {
+	} catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 }
@@ -157,7 +157,7 @@ void BitcoinExchange::exchangeRate( void ) const {
 			} else {
 				throw InvalidValueException(GENERIC_ERROR);
 			}
-		} catch (std::exception &e) {
+		} catch (const std::exception &e) {
 			std::cout << e.what() << std::endl;
 		}
 	}
