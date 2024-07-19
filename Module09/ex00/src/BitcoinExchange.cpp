@@ -83,6 +83,7 @@ BitcoinExchange::BitcoinExchange( std::string filename ) : _filename(filename) {
 		std::cout << e.what() << std::endl;
 	}
 }
+
 /* Copy Constructor Method */
 BitcoinExchange::BitcoinExchange( const BitcoinExchange &other ) {
 	*this = other;
@@ -118,17 +119,7 @@ void BitcoinExchange::printExchange( std::string date, std::string value ) const
 	if (!BTCUtils::valueValid(value, error)) {
 		throw InvalidValueException(error);
 	}
-
-	double			doubleValue = std::strtod(value.c_str(), NULL);
-	Database		database = this->getDatabase();
-	Database::iterator	it = database.find(date);
-	std::string		lastDate;
-	// double			lastValue;
-
-	if (it != database.end()) {
-		std::cout << date << " => " << value << " = " << 
-		doubleValue * it->second << std::endl;
-	}
+	std::cout << date << " => " << value << std::endl;
 }
 
 void BitcoinExchange::exchangeRate( void ) const {
