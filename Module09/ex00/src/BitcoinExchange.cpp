@@ -35,7 +35,7 @@ namespace BTCUtils {
 		if (!DBFIle.is_open() || DBFIle.fail()) {
 			throw InvalidFileException();
 		}
-		
+
 		std::string	line;
 		while (std::getline(DBFIle, line)) {
 			std::istringstream	ss(line);
@@ -112,14 +112,24 @@ std::string	BitcoinExchange::getFilename( void ) const {
 
 void BitcoinExchange::printExchange( std::string date, std::string value ) const {
 	errorType	error;
-	
+
 	if (!BTCUtils::dateValid(date)) {
 		throw InvalidDateException();
 	}
 	if (!BTCUtils::valueValid(value, error)) {
 		throw InvalidValueException(error);
 	}
-	std::cout << date << " => " << value << std::endl;
+
+	double	doubleValue = std::strtod(value.c_str(), NULL);
+	Database	database = this->getDatabase();
+	Database::iterator	it = database.upper_bound(date);
+
+	std::cout << date << " => " << doubleValue << " = ";
+	if (it == database.begin()) {
+		std::cout << it->second * doubleValue << std::endl;
+	} else {
+		std::cout << (--it)->second * doubleValue << std::endl;
+	}
 }
 
 void BitcoinExchange::exchangeRate( void ) const {
