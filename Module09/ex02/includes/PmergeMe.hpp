@@ -33,14 +33,14 @@ class PmergeMe {
 		~PmergeMe( void );
 		
 		/* Vector Methods */
-		Vector	fordJohnsonSort( const Vector &vector );
-		Vector	merge( const Vector &left, const Vector &right );
 		void	insetion( Vector &vector );
+		Vector	merge( const Vector &left, const Vector &right );
+		Vector	fordJohnsonSort( const Vector &vector );
 
 		/* Deque Methods */
-		Deque	fordJohnsonSort( const Deque &deque );
-		Deque	merge( const Deque &left, const Deque &right );
 		void	insetion( Deque &deque );
+		Deque	merge( const Deque &left, const Deque &right );
+		Deque	fordJohnsonSort( const Deque &deque );
 };
 
 /* Exception Classes */
