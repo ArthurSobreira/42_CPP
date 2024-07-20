@@ -23,21 +23,21 @@ class BitcoinExchange {
 	private:
 		Database	_database;
 		std::string	_filename;
-		
+
 	public:
 		/* Constructor Methods */
 		BitcoinExchange( void );
 		BitcoinExchange( std::string filename );
-		
+
 		/* Copy Constructor Method */
 		BitcoinExchange( const BitcoinExchange &other );
-		
+
 		/* Copy Assignment Operator Overload */
 		BitcoinExchange &operator=( const BitcoinExchange &other );
-		
+
 		/* Destructor Method */
 		~BitcoinExchange( void );
-		
+
 		/* Public Methods */
 		Database		getDatabase( void ) const;
 		std::string		getFilename( void ) const;
