@@ -21,7 +21,7 @@ namespace Utils {
 
 int main( int argc, char *argv[] ) {
 	if (argc == 1) {
-		std::cout << COLORIZE(RED, "Usage: ./PmergeMe [expression]") << std::endl;
+		std::cout << COLORIZE(RED, "Usage: ./PmergeMe [numbers]") << std::endl;
 		return (1);
 	}
 
