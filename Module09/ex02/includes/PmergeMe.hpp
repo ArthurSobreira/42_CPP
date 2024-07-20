@@ -32,14 +32,10 @@ class PmergeMe {
 		/* Destructor Method */
 		~PmergeMe( void );
 		
-		/* Vector Methods */
-		void	insetion( Vector &vector );
-		Vector	merge( const Vector &left, const Vector &right );
+		/* Vector Method */
 		Vector	fordJohnsonSort( const Vector &vector );
 
-		/* Deque Methods */
-		void	insetion( Deque &deque );
-		Deque	merge( const Deque &left, const Deque &right );
+		/* Deque Method */
 		Deque	fordJohnsonSort( const Deque &deque );
 };
 
