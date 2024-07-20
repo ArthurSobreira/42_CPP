@@ -10,6 +10,8 @@ typedef enum errors {
 	EMPTY_EXPRESSION,
 	INVALID_CHAR,
 	BIGGER_THAN_TEN,
+	TOO_MANY_NUMBERS,
+	NOT_ENOUGH_NUMBERS
 } errorType;
 
 typedef std::stack<size_t>	CalcStack;
@@ -46,6 +48,16 @@ class InvalidExpressionException : public std::exception {
 
 	public:
 		InvalidExpressionException( errorType error ) : _error(error) {};
+
+		virtual const char *what( void ) const throw();
+};
+
+class InvalidOperationException : public std::exception {
+	private:
+		errorType	_error;
+
+	public:
+		InvalidOperationException( errorType error ) : _error(error) {};
 
 		virtual const char *what( void ) const throw();
 };
