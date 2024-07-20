@@ -73,7 +73,7 @@ namespace BTCUtils {
 	}
 }
 
-/* Constructor Method */
+/* Constructor Methods */
 BitcoinExchange::BitcoinExchange( void ) { throw InvalidFileException(); }
 
 BitcoinExchange::BitcoinExchange( std::string filename ) : _filename(filename) {
