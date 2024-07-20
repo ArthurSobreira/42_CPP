@@ -105,85 +105,60 @@ Vector	PmergeMe::fordJohnsonSort( const Vector &vector ) {
 	if (vector.size() < 2)
 		return vector;
 
-	std::vector<Vector> subsets;
-	for (size_t i = 0; i < vector.size(); i += 2) {
-		Vector subset;
-		subset.push_back(vector[i]);
-		if (i + 1 < vector.size())
-			subset.push_back(vector[i + 1]);
-		subsets.push_back(subset);
+	Vector::size_type	subsetSize = 2;
+	std::vector<Vector>	subsets;
+
+	for (Vector::size_type i = 0; i < vector.size(); i += subsetSize) {
+		Vector	subset(vector.begin() + i, vector.begin() + 
+			std::min(i + subsetSize, vector.size()));
+
+		PMUtils::insetion(subset);
+		subsets.push_back(subset);		
 	}
 
 	while (subsets.size() > 1) {
-		std::vector<Vector> newSubsets;
-		for (size_t i = 0; i < subsets.size(); i += 2) {
-			if (i + 1 < subsets.size())
+		std::vector<Vector>	newSubsets;
+		for (Vector::size_type i = 0; i < subsets.size(); i += subsetSize) {
+			if (i + 1 < subsets.size()) {
 				newSubsets.push_back(PMUtils::merge(subsets[i], subsets[i + 1]));
-			else
+			} else {
 				newSubsets.push_back(subsets[i]);
+			}
 		}
 		subsets = newSubsets;
 	}
-
 	return (subsets[0]);
 }
 
 /* Deque Method */
 Deque	PmergeMe::fordJohnsonSort( const Deque &deque ) {
 	if (deque.size() < 2)
-		return deque;
+		return (deque);
 
-    std::vector<Deque> subsets;
-    for (size_t i = 0; i < deque.size(); i += 2) {
-        Deque subset;
-        subset.push_back(deque[i]);
-        if (i + 1 < deque.size())
-            subset.push_back(deque[i + 1]);
-        subsets.push_back(subset);
-    }
+	Deque::size_type	subsetSize = 2;
+	std::vector<Deque>	subsets;
 
-    while (subsets.size() > 1) {
-        std::vector<Deque> newSubsets;
-        for (size_t i = 0; i < subsets.size(); i += 2) {
-            if (i + 1 < subsets.size())
-                newSubsets.push_back(PMUtils::merge(subsets[i], subsets[i + 1]));
-            else
-                newSubsets.push_back(subsets[i]);
-        }
-        subsets = newSubsets;
-    }
+	for (Deque::size_type i = 0; i < deque.size(); i += subsetSize) {
+		Deque	subset(deque.begin() + i, deque.begin() + 
+			std::min(i + subsetSize, deque.size()));
 
-    return subsets[0];
+		PMUtils::insetion(subset);
+		subsets.push_back(subset);		
+	}
+
+	while (subsets.size() > 1) {
+		std::vector<Deque>	newSubsets;
+		for (Deque::size_type i = 0; i < subsets.size(); i += 2) {
+			if (i + 1 < subsets.size()) {
+				newSubsets.push_back(PMUtils::merge(subsets[i], subsets[i + 1]));
+			} else {
+				newSubsets.push_back(subsets[i]);
+			}
+		}
+		subsets = newSubsets;
+	}
+	return (subsets[0]);
 }
-
-// Deque	PmergeMe::fordJohnsonSort( const Deque &deque ) {
-// 	if (deque.size() < 2)
-// 		return (deque);
-
-// 	Deque::size_type	subsetSize = 2;
-// 	Deque	subsets;
-
-// 	for (Deque::size_type i = 0; i < deque.size(); i += subsetSize) {
-// 		Deque	subset(deque.begin() + i, deque.begin() + 
-// 			std::min(i + subsetSize, deque.size()));
-
-// 		PMUtils::insetion(subset);
-// 		subsets.push_back(subset);		
-// 	}
-
-// 	while (subsets.size() > 1) {
-// 		Deque	newSubsets;
-// 		for (Deque::size_type i = 0; i < subsets.size(); i += subsetSize) {
-// 			if (i + 1 < subsets.size()) {
-// 				newSubsets.push_back(PMUtils::merge(subsets[i], subsets[i + 1]));
-// 			} else {
-// 				newSubsets.push_back(subsets[i]);
-// 			}
-// 		}
-// 		subsets = newSubsets;
-// 	}
-// 	return (subsets[0]);
-// }
 
 /* Exception Classes */
 const char *InvalidContainerException::what( void ) const throw() {
