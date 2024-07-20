@@ -12,6 +12,8 @@ typedef enum errors {
 	BIGGER_THAN_TEN,
 } errorType;
 
+typedef std::stack<size_t>	CalcStack;
+
 class RPN {
 	private:
 		std::string	_expression;
@@ -32,6 +34,8 @@ class RPN {
 		
 		/* Public Methods */
 		std::string	getExpression( void ) const;
+		void	executeOperation( CalcStack &calc, 
+			char op ) const;
 		size_t	calculate( void ) const;
 };
 
