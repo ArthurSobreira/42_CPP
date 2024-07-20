@@ -10,7 +10,7 @@ class RPN {
 		std::string	_expression;
 
 	public:
-		/* Constructor Method */
+		/* Constructor Methods */
 		RPN( void );
 		RPN( std::string expression );
 
