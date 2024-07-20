@@ -77,11 +77,7 @@ namespace BTCUtils {
 BitcoinExchange::BitcoinExchange( void ) { throw InvalidFileException(); }
 
 BitcoinExchange::BitcoinExchange( std::string filename ) : _filename(filename) {
-	try {
-		BTCUtils::parseDatabase(this->_database);
-	} catch (const std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	BTCUtils::parseDatabase(this->_database);
 }
 
 /* Copy Constructor Method */
