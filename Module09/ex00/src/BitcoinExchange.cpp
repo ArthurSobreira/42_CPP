@@ -128,7 +128,8 @@ void BitcoinExchange::printExchange( std::string date, std::string value ) const
 	if (it == database.begin()) {
 		std::cout << it->second * doubleValue << std::endl;
 	} else {
-		std::cout << (--it)->second * doubleValue << std::endl;
+		std::cout << std::setprecision(15) << 
+		(--it)->second * doubleValue << std::endl;
 	}
 }
 
