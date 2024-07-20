@@ -30,10 +30,10 @@ class RPN {
 
 		/* Copy Assignment Operator Overload */
 		RPN &operator=( const RPN &other );
-		
+
 		/* Destructor Method */
 		~RPN( void );
-		
+
 		/* Public Methods */
 		std::string	getExpression( void ) const;
 		void	executeOperation( CalcStack &calcStack, 
