@@ -47,7 +47,7 @@ class InvalidExpressionException : public std::exception {
 		errorType	_error;
 
 	public:
-		InvalidExpressionException( errorType error ) : _error(error) {};
+		InvalidExpressionException( errorType error );
 
 		virtual const char *what( void ) const throw();
 };
@@ -57,7 +57,7 @@ class InvalidOperationException : public std::exception {
 		errorType	_error;
 
 	public:
-		InvalidOperationException( errorType error ) : _error(error) {};
+		InvalidOperationException( errorType error );
 
 		virtual const char *what( void ) const throw();
 };
