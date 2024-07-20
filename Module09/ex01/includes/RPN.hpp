@@ -11,7 +11,8 @@ typedef enum errors {
 	INVALID_CHAR,
 	BIGGER_THAN_TEN,
 	TOO_MANY_NUMBERS,
-	NOT_ENOUGH_NUMBERS
+	NOT_ENOUGH_NUMBERS,
+	DIVISION_BY_ZERO
 } errorType;
 
 typedef std::stack<size_t>	CalcStack;
