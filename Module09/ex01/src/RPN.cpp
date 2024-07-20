@@ -33,7 +33,7 @@ namespace RPNUtils {
 }
 
 /* Constructor Methods */
-RPN::RPN( void ) { 
+RPN::RPN( void ) {
 	throw InvalidExpressionException(GENERIC_ERROR); 
 }
 
@@ -55,7 +55,7 @@ RPN &RPN::operator=( const RPN &other ) {
 }
 
 /* Destructor Method */
-RPN::~RPN( void ) {}
+RPN::~RPN( void ) {};
 
 /* Public Methods */
 std::string	RPN::getExpression( void ) const {
