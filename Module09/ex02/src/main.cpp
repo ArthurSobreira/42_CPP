@@ -2,8 +2,9 @@
 #include "PmergeMe.hpp"
 
 namespace Utils {
-	template <typename T> void	printContainer( T &container ) {
-		typename T::iterator it = container.begin();
+	template <typename Container>
+	void	printContainer( Container &container ) {
+		typename Container::iterator it = container.begin();
 
 		while (it != container.end()) {
 			std::cout << *it << " ";
