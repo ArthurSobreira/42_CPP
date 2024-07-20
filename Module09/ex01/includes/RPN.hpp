@@ -5,6 +5,13 @@
 #include <stdexcept>
 #include <stack>
 
+typedef enum errors {
+	GENERIC_ERROR = 1,
+	EMPTY_EXPRESSION,
+	INVALID_CHAR,
+	BIGGER_THAN_TEN,
+} errorType;
+
 class RPN {
 	private:
 		std::string	_expression;
@@ -24,7 +31,19 @@ class RPN {
 		~RPN( void );
 		
 		/* Public Methods */
+		std::string	getExpression( void ) const;
 		size_t	calculate( void ) const;
+};
+
+/* Exception Classes */
+class InvalidExpressionException : public std::exception {
+	private:
+		errorType	_error;
+
+	public:
+		InvalidExpressionException( errorType error ) : _error(error) {};
+
+		virtual const char *what( void ) const throw();
 };
 
 #endif
