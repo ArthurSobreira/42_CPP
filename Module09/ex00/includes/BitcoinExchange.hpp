@@ -67,7 +67,7 @@ class InvalidValueException : public std::exception {
 		errorType	_error;
 
 	public:
-		InvalidValueException( errorType error ) : _error(error) {};
+		InvalidValueException( errorType error );
 
 		virtual const char *what( void ) const throw();
 };
