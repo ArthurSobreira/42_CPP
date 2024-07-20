@@ -33,8 +33,8 @@ int main( int argc, char *argv[] ) {
 
 	Vector	unsortedVector;
 	Deque	unsortedDeque;
-	Vector	sortedV'ector;
-	Deque	sortedDeque;'
+	Vector	sortedVector;
+	Deque	sortedDeque;
 
 	for (int i = 1; i < argc; i++) {
 		unsortedVector.push_back(std::atoi(argv[i]));
