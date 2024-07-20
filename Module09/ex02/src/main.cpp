@@ -13,15 +13,9 @@ namespace Utils {
 	}
 
 	void	printTimeElapsed( size_t size, double elapsed, bool isVector ) {
-		if (isVector) {
-			std::cout << "Time to process a range of " << size << 
-			"elements with std::vector: " << std::fixed << 
-			std::setprecision(6) << elapsed << " us" << std::endl;
-		} else {
-			std::cout << "Time to process a range of " << size << 
-			"elements with std::deque: " << std::fixed << 
-			std::setprecision(6) << elapsed << " us" << std::endl;
-		}
+		std::cout << "Time to process a range of " << size << " elements with " << 
+		(isVector ? "std::vector " : "std::deque ") << std::fixed << 
+		std::setprecision(6) << COLORIZE(YELLOW, elapsed) << " us" << std::endl;
 	}
 }
 
