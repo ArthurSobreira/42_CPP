@@ -2,10 +2,6 @@
 #include "RPN.hpp"
 
 namespace RPNUtils {
-	bool	isOperator( char c ) {
-		return (c == '+' || c == '-' || c == '*' || c == '/');
-	}
-
 	bool	isOnlySpaces( std::string expression ) {
 		return (expression.find_first_not_of(" ") == std::string::npos);
 	}
@@ -117,6 +113,9 @@ size_t	RPN::calculate( void ) const {
 }
 
 /* Exception Classes */
+InvalidExpressionException::InvalidExpressionException( errorType error ) 
+	: _error(error) {};
+
 const char *InvalidExpressionException::what( void ) const throw() {
 	switch (this->_error) {
 		case EMPTY_EXPRESSION:
@@ -129,6 +128,9 @@ const char *InvalidExpressionException::what( void ) const throw() {
 			return (RED "Error: Invalid Expression" RESET);
 	}
 }
+
+InvalidOperationException::InvalidOperationException( errorType error ) 
+	: _error(error) {};
 
 const char *InvalidOperationException::what( void ) const throw() {
 	switch (this->_error) {
