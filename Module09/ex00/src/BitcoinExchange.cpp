@@ -178,6 +178,9 @@ const char *InvalidDateException::what( void ) const throw() {
 	return (RED "Error: Invalid Date Format." RESET);
 }
 
+InvalidValueException::InvalidValueException( errorType error ) 
+	: _error(error) {};
+
 const char *InvalidValueException::what( void ) const throw() {
 	switch (this->_error) {
 		case NEGATIVE_VALUE:
