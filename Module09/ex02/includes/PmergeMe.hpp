@@ -44,12 +44,12 @@ class PmergeMe {
 };
 
 /* Exception Classes */
-class InvalidVectorException : public std::exception {
+class InvalidContainerException : public std::exception {
 	public:
 		virtual const char *what( void ) const throw();
 };
 
-class InvalidDequeException : public std::exception {
+class NegativeNumberException : public std::exception {
 	public:
 		virtual const char *what( void ) const throw();
 };
