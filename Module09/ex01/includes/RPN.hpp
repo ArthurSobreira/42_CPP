@@ -10,7 +10,6 @@ typedef enum errors {
 	EMPTY_EXPRESSION,
 	INVALID_CHAR,
 	BIGGER_THAN_TEN,
-	TOO_MANY_NUMBERS,
 	NOT_ENOUGH_NUMBERS,
 	DIVISION_BY_ZERO
 } errorType;
@@ -37,7 +36,7 @@ class RPN {
 		
 		/* Public Methods */
 		std::string	getExpression( void ) const;
-		void	executeOperation( CalcStack &calc, 
+		void	executeOperation( CalcStack &calcStack, 
 			char op ) const;
 		size_t	calculate( void ) const;
 };
