@@ -8,8 +8,8 @@
 
 ## Summary
 
-> <i>The twelfth project in the 42sp fundamentals track, <strong>CPP</strong>  </i>
-> <i> </i>
+> <i>The twelfth project in the 42sp fundamentals track, <strong>CPP</strong> is also the first project that uses another language (C++). </i>
+> <i>The project is based on the resolution of ten exercices lists </i>
 > <i> </i>
 > <i> </i>
 
