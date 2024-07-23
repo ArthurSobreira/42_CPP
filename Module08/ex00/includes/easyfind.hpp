@@ -10,7 +10,7 @@
 template <typename T>
 typename T::iterator	easyfind( T &container, int value );
 
-/* Exception Classe */
+/* Exception Class */
 class ValueNotFoundException : public std::exception {
 	public:
 		virtual const char *what() const throw() {
